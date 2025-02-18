@@ -21,10 +21,10 @@ const logout = () => {
                         </Link>
                     </div>
                     <div class="flex justify-between w-full">
-                        <div class="hidden sm:flex sm:ml-6 space-x-8">
-                            <Link :href="route('home')" class="inline-flex items-center border-b-2 border-transparent hover:border-gray-200 text-sm text-gray-300" :class="{ '!border-blue-500': $page.props.ziggy.route_name === 'home' }">
+                        <div class="hidden sm:flex sm:ml-6 space-x-8 font-mono">
+                            <!-- <Link :href="route('home')" class="inline-flex items-center border-b-2 border-transparent hover:border-gray-200 text-sm text-gray-300" :class="{ '!border-blue-500': $page.props.ziggy.route_name === 'home' }">
                                 Home
-                            </Link>
+                            </Link> -->
                             <Link :href="route('dashboard')" class="inline-flex items-center border-b-2 border-transparent hover:border-gray-200 text-sm text-gray-300" :class="{ '!border-blue-500': $page.props.ziggy.route_name === 'dashboard' }">
                                 Dashboard
                             </Link>
@@ -77,9 +77,9 @@ const logout = () => {
 
         <DisclosurePanel class="sm:hidden">
             <div class="spacey-1 pb-3">
-                <Link :href="route('home')" class="link block py-2 px-8 font-medium text-gray-300 border-l-2 border-transparent" :class="{ 'border-blue-500': $page.props.ziggy.route_name === 'home' }">
+                <!-- <Link :href="route('home')" class="link block py-2 px-8 font-medium text-gray-300 border-l-2 border-transparent" :class="{ 'border-blue-500': $page.props.ziggy.route_name === 'home' }">
                     Home
-                </Link>
+                </Link> -->
                 <Link :href="route('dashboard')" class="link block py-2 px-8 font-medium text-gray-300 border-l-2 border-transparent" :class="{ 'border-blue-500': $page.props.ziggy.route_name === 'dashboard' }">
                     Dashboard
                 </Link>
@@ -99,7 +99,6 @@ const logout = () => {
 <style scoped>
 #navbar, #nav_menu_dropdown{
     background-color: #254660!important;
-    /* color: rgb(194, 193, 193) !important; */
 }
 .link:hover{
     background-color: rgba(0, 0, 0, 0.3) !important;

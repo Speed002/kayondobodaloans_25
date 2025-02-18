@@ -19,11 +19,11 @@ const submit = () => {
 
 <template>
     <div>
-        <h2 class="font-bold text-gray-900 font-mono">Change password</h2>
+        <h2 class="font-bold text-gray-300 font-mono">Change password</h2>
 
         <form class="mt-10 space-y-6" v-on:submit.prevent="submit">
             <div>
-                <label for="current_password" class="text-sm font-medium text-gray-900">Current password</label>
+                <label for="current_password" class="text-sm font-medium text-gray-300">Current password</label>
                 <div class="mt-2">
                     <input type="password" id="current_password" class="w-full py-2 text-gray-900 border-gray-300 text-sm" v-model="form.current_password">
                     <div v-if="form.errors.current_password" class="text-sm text-red-500 mt-2">
@@ -33,7 +33,7 @@ const submit = () => {
             </div>
 
             <div>
-                <label for="password" class="text-sm font-medium text-gray-900">Password</label>
+                <label for="password" class="text-sm font-medium text-gray-300">Password</label>
                 <div class="mt-2">
                     <input type="password" id="password" class="w-full py-2 text-gray-900 border-gray-300 text-sm" v-model="form.password">
                     <div v-if="form.errors.password" class="text-sm text-red-500 mt-2">
@@ -43,7 +43,7 @@ const submit = () => {
             </div>
 
             <div>
-                <label for="password_confirmation" class="text-sm font-medium text-gray-900">Confirm password</label>
+                <label for="password_confirmation" class="text-sm font-medium text-gray-300">Confirm password</label>
                 <div class="mt-2">
                     <input type="password" id="password_confirmation" class="w-full py-2 text-gray-900 border-gray-300 text-sm" v-model="form.password_confirmation">
                     <div v-if="form.errors.password_confirmation" class="text-sm text-red-500 mt-2">

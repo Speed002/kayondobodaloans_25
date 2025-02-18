@@ -4,7 +4,11 @@ export default {
         "./resources/js/**/*.vue",
     ],
     theme: {
-        extend: {},
+        extend: {
+            colors: {
+                'nav-blue': '#254660',
+              },
+        },
     },
     plugins: [
         require('@tailwindcss/forms'),

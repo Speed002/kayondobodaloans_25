@@ -38,11 +38,11 @@ const photoPreview = computed(() => {
 
 <template>
     <div>
-        <h2 class="font-bold text-gray-900 font-mono">Profile information</h2>
+        <h2 class="font-bold text-gray-300 font-mono">Profile information</h2>
 
         <form class="mt-10 space-y-6" v-on:submit.prevent="submit">
             <div>
-                <label for="email" class="text-sm font-medium text-gray-900">Email</label>
+                <label for="email" class="text-sm font-medium text-gray-300">Email</label>
                 <div class="mt-2">
                     <input type="text" id="email" class="w-full py-2 text-gray-900 border-gray-300 text-sm" v-model="form.email">
                     <div v-if="form.errors.email" class="text-sm text-red-500 mt-2">
@@ -52,7 +52,7 @@ const photoPreview = computed(() => {
             </div>
 
             <div>
-                <label for="name" class="text-sm font-medium text-gray-900">Name</label>
+                <label for="name" class="text-sm font-medium text-gray-300">Name</label>
                 <div class="mt-2">
                     <input type="text" id="name" class="w-full py-2 text-gray-900 border-gray-300 text-sm" v-model="form.name">
                     <div v-if="form.errors.name" class="text-sm text-red-500 mt-2">
@@ -62,7 +62,7 @@ const photoPreview = computed(() => {
             </div>
 
             <div>
-                <label for="photo" class="text-sm font-medium text-gray-900">Profile photo</label>
+                <label for="photo" class="text-sm font-medium text-gray-300">Profile photo</label>
                 <div class="flex mt-2 items-center space-x-3">
                     <div>
                         <img :src="photoPreview" class="w-12 h-12 rounded-full" v-if="photoPreview">

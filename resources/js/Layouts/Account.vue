@@ -9,12 +9,12 @@ import { Link } from '@inertiajs/vue3'
                 <nav class="sm:border-r border-r-slate-100 h-full">
                     <ul class="space-y-1">
                         <li>
-                            <Link :href="route('account.index')" class="text-gray-900 flex p-2 pl-3 text-sm font-semibold" :class="{ 'bg-gray-100': $page.props.ziggy.route_name === 'account.index' }">
+                            <Link :href="route('account.index')" class="link text-gray-300 flex p-2 pl-3 text-sm font-semibold" :class="{ 'bg-nav-blue': $page.props.ziggy.route_name === 'account.index' }">
                                 Profile information
                             </Link>
                         </li>
                         <li v-if="$page.props.features.security">
-                            <Link :href="route('account.security.index')" class="text-gray-900 flex p-2 pl-3 text-sm font-semibold" :class="{ 'bg-gray-100': $page.props.ziggy.route_name === 'account.security.index' }">
+                            <Link :href="route('account.security.index')" class="link text-gray-300 flex p-2 pl-3 text-sm font-semibold" :class="{ 'bg-nav-blue': $page.props.ziggy.route_name === 'account.security.index' }">
                                 Security
                             </Link>
                         </li>
@@ -27,3 +27,9 @@ import { Link } from '@inertiajs/vue3'
         </div>
     </div>
 </template>
+
+<style scoped>
+.link:hover{
+    background-color: rgba(0, 0, 0, 0.3) !important;
+}
+</style>
