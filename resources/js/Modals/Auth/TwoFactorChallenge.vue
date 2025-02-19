@@ -8,14 +8,14 @@ const form = useForm({
 </script>
 
 <template>
-    <Modal class="bg-white max-w-md p-12">
-        <h2 class="text-center text-2xl font-bold font-mono text-gray-900">Two factor authentication</h2>
+    <Modal class="bg-nav-blue max-w-md p-12">
+        <h2 class="text-center text-2xl font-bold font-mono text-gray-300">Two factor authentication</h2>
 
         <form class="mt-6 space-y-6" v-on:submit.prevent="form.post('/two-factor-challenge')">
             <div>
-                <label for="code" class="text-sm font-medium text-gray-900">Code</label>
+                <label for="code" class="text-sm font-medium text-gray-300">Code</label>
                 <div class="mt-2">
-                    <input type="password" id="code" class="w-full py-2 text-gray-900 border-gray-300 text-sm" v-model="form.code">
+                    <input type="password" id="code" class="w-full py-2 text-gray-300 border-gray-300 text-sm" v-model="form.code">
                     <div v-if="form.errors.code" class="text-sm text-red-500 mt-2">
                         {{ form.errors.code }}
                     </div>
@@ -23,7 +23,7 @@ const form = useForm({
             </div>
 
             <div>
-                <button type="submit" class="flex w-full justify-center bg-blue-500 px-3 py-2 text-sm font-semibold text-white disabled:opacity-50" :disabled="form.processing">
+                <button type="submit" class="flex w-full justify-center bg-sky-500 px-3 py-2 text-sm font-semibold text-white disabled:opacity-50" :disabled="form.processing">
                     Continue
                 </button>
             </div>

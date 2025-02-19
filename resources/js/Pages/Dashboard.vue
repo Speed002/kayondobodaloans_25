@@ -1,6 +1,7 @@
 <script setup>
 import { Head } from '@inertiajs/vue3'
 import Default from '@/Layouts/Default.vue'
+import { PlusIcon,  } from '@heroicons/vue/24/outline';
 
 defineOptions({ layout: Default })
 </script>
@@ -10,21 +11,44 @@ defineOptions({ layout: Default })
         <div class="max-w-5xl mx-auto space-y-5">
             <h3>Dashboard</h3>
             <div class="flex-grow portal rounded-md">
-                Hello Speed
+                <div class="flex items-center justify-between">
+                    <div>
+                        Hello {{ $page.props.auth.user.name }}
+                        <p class="text-sm text-gray-400 hidden sm:block">
+                            You have <span class="text-sky-500">4</span> unread messages from the site.
+                        </p>
+                    </div>
+                    <button class="bg-sky-700 p-2 text-sm tracking-tighter rounded-md flex items-center justify-between">
+                        <PlusIcon class="w-4 h-4"/>
+                        &nbsp;Add client
+                    </button>
+                </div>
+            </div>
+            <div class="flex-grow portal-mini rounded-md space-y-1">
+                Recent message on <span class="bg-cyan-950 p-1 rounded-md">12/12/12</span> <span class="bg-cyan-950 p-1 rounded-md">2:12PM</span> by {{ $page.props.auth.user.name }}
                 <p class="text-sm text-gray-400">
-                    Welcome back to your dashboard, You have <span class="bg-cyan-950 p-1 rounded-md">4</span> unread messages from the site.
+                    kasamba Mark Edward, CM98347632387. UBF 200H. Agreement date:[12/12/12], at Kireka >
                 </p>
             </div>
             <h3>Analytics</h3>
-            <div class="flex items-center justify-start space-x-3 rounded-md">
-                <div class="portal rounded-md">clients <span class="bg-cyan-950 p-1 rounded-md">12</span></div>
-                <div class="portal rounded-md">referees <span class="bg-cyan-950 p-1 rounded-md">12</span></div>
-                <div class="portal rounded-md">messages <span class="bg-cyan-950 p-1 rounded-md">12</span></div>
+            <div class="flex items-center justify-between md:justify-start sm:justify-start space-x-3 rounded-md text-sm">
+                <div class="portal rounded-md flex items-center ">
+                    <span class="text-sky-500">12&nbsp;</span>
+                    clients
+                </div>
+                <div class="portal rounded-md flex items-center">
+                    <span class="text-sky-500">12&nbsp;</span>
+                    Referess
+                </div>
+                <div class="portal rounded-md flex items-center">
+                    <span class="text-sky-500">12&nbsp;</span>
+                    Messages
+                </div>
             </div>
             <div class="flex-grow portal-mini rounded-md space-y-1">
-                Recently added client on <span class="bg-cyan-950 p-1 rounded-md">12/12/12</span> <span class="bg-cyan-950 p-1 rounded-md">2:12PM</span>
+                Recently added client on <span class="bg-cyan-950 p-1 rounded-md">12/12/12</span> <span class="bg-cyan-950 p-1 rounded-md">2:12PM</span>, added by {{ $page.props.auth.user.name }}
                 <p class="text-sm text-gray-400">
-                    kasamba Mark Edward, CM98347632387. UBF 200H. Agreement date:[12/12/12], at Kireka > 
+                    kasamba Mark Edward, CM98347632387. UBF 200H. Agreement date:[12/12/12], at Kireka >
                 </p>
             </div>
         </div>
@@ -36,11 +60,11 @@ defineOptions({ layout: Default })
 <style scoped>
 .portal{
     background-color: #254660!important;
-    padding:20px;
+    padding:18px;
 }
 
 .portal-mini{
     background-color: rgba(0, 0, 0, 0.3) !important;
-    padding:20px;
+    padding:18px;
 }
 </style>

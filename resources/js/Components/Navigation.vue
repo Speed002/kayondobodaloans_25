@@ -1,7 +1,7 @@
 <script setup>
 import { Link, router } from '@inertiajs/vue3'
 import { Disclosure, DisclosurePanel, DisclosureButton, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
-import { Bars3Icon, XMarkIcon } from '@heroicons/vue/24/outline'
+import { Bars3Icon, XMarkIcon, PlusIcon } from '@heroicons/vue/24/outline'
 
 const logout = () => {
     router.post(route('logout'))
@@ -27,6 +27,15 @@ const logout = () => {
                             </Link> -->
                             <Link :href="route('dashboard')" class="inline-flex items-center border-b-2 border-transparent hover:border-gray-200 text-sm text-gray-300" :class="{ '!border-blue-500': $page.props.ziggy.route_name === 'dashboard' }">
                                 Dashboard
+                            </Link>
+                            <Link :href="route('clients')" class="inline-flex items-center border-b-2 border-transparent hover:border-gray-200 text-sm text-gray-300" :class="{ '!border-blue-500': $page.props.ziggy.route_name === 'clients' }">
+                                Clients
+                            </Link>
+                            <Link :href="route('messages')" class="inline-flex items-center border-b-2 border-transparent hover:border-gray-200 text-sm text-gray-300" :class="{ '!border-blue-500': $page.props.ziggy.route_name === 'messages' }">
+                                Messages
+                            </Link>
+                            <Link :href="route('create.create')" class="inline-flex items-center border-b-2 border-transparent hover:border-gray-200 text-sm text-gray-300" :class="{ '!border-blue-500': $page.props.ziggy.route_name === 'create.create' }">
+                                Add client
                             </Link>
                         </div>
                         <div class="hidden sm:flex sm:ml-6 space-x-8" v-if="!$page.props.auth.user">
@@ -82,6 +91,15 @@ const logout = () => {
                 </Link> -->
                 <Link :href="route('dashboard')" class="link block py-2 px-8 font-medium text-gray-300 border-l-2 border-transparent" :class="{ 'border-blue-500': $page.props.ziggy.route_name === 'dashboard' }">
                     Dashboard
+                </Link>
+                <Link :href="route('messages')" class="link block py-2 px-8 font-medium text-gray-300 border-l-2 border-transparent" :class="{ 'border-blue-500': $page.props.ziggy.route_name === 'messages' }">
+                    Messages
+                </Link>
+                <Link :href="route('clients')" class="link block py-2 px-8 font-medium text-gray-300 border-l-2 border-transparent" :class="{ 'border-blue-500': $page.props.ziggy.route_name === 'clients' }">
+                    Clients
+                </Link>
+                <Link :href="route('create.create')" class="link block py-2 px-8 font-medium text-gray-300 border-l-2 border-transparent flex items-center" :class="{ 'border-blue-500': $page.props.ziggy.route_name === 'create.create' }">
+                    Add client
                 </Link>
             </div>
             <div class="spacey-1 pb-3" v-if="!$page.props.auth.user">

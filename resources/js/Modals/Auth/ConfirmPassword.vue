@@ -11,14 +11,14 @@ const form = useForm({
 </script>
 
 <template>
-    <Modal class="bg-white max-w-md p-12">
-        <h2 class="text-center text-2xl font-bold font-mono text-gray-900">Confirm password</h2>
+    <Modal class="bg-nav-blue max-w-md p-12">
+        <h2 class="text-center text-2xl font-bold font-mono text-gray-300">Confirm password</h2>
 
         <form class="mt-6 space-y-6" v-on:submit.prevent="form.post(route('password.confirm'), { onSuccess: () => close() })">
             <div>
-                <label for="password" class="text-sm font-medium text-gray-900">Password</label>
+                <label for="password" class="text-sm font-medium text-gray-300">Password</label>
                 <div class="mt-2">
-                    <input type="password" id="password" class="w-full py-2 text-gray-900 border-gray-300 text-sm" v-model="form.password">
+                    <input type="password" id="password" class="w-full py-2 text-gray-300 border-gray-300 text-sm" v-model="form.password">
                     <div v-if="form.errors.password" class="text-sm text-red-500 mt-2">
                         {{ form.errors.password }}
                     </div>

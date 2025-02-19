@@ -7,8 +7,12 @@ use App\Http\Controllers\Auth\RecoverIndexController;
 use App\Http\Controllers\Auth\RegisterIndexController;
 use App\Http\Controllers\Auth\ResetIndexController;
 use App\Http\Controllers\Auth\TwoFactorIndexController;
+use App\Http\Controllers\ClientCreateController;
+use App\Http\Controllers\ClientIndexController;
+use App\Http\Controllers\ClientShowController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\MessageIndexController;
 use Illuminate\Auth\Middleware\RequirePassword;
 use Illuminate\Support\Facades\Route;
 use Laravel\Fortify\Features;
@@ -51,6 +55,11 @@ if (Features::enabled(Features::resetPasswords())) {
     Route::get('/auth/recover', RecoverIndexController::class)->name('auth.recover');
     Route::get('/auth/reset', ResetIndexController::class)->name('password.reset');
 }
+
+Route::get('/clients', ClientIndexController::class)->name('clients')->middleware('verified');
+Route::get('/client', ClientShowController::class)->name('client')->middleware('verified');
+Route::get('/client/create', ClientCreateController::class)->name('create.create')->middleware('verified');
+Route::get('/messages', MessageIndexController::class)->name('messages')->middleware('verified');
 
 // Route::multisteps();
 

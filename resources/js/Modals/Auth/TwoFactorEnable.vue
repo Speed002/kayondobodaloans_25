@@ -31,8 +31,8 @@ const submit = () => {
 </script>
 
 <template>
-    <Modal class="bg-white max-w-md p-12">
-        <h2 class="text-center text-2xl font-bold font-mono text-gray-900">Set up two factor authentication</h2>
+    <Modal class="bg-nav-blue max-w-md p-12">
+        <h2 class="text-center text-2xl font-bold font-mono text-gray-300">Set up two factor authentication</h2>
 
         <form class="mt-6 space-y-6" v-on:submit.prevent="submit">
             <p class="text-sm">To set up two factor authentication, scan the QR code with your authenticator application and enter the code below.</p>
@@ -40,9 +40,9 @@ const submit = () => {
             <div v-html="qrCode" class="w-1/2 mx-auto"></div>
 
             <div>
-                <label for="code" class="text-sm font-medium text-gray-900">Code</label>
+                <label for="code" class="text-sm font-medium text-gray-300">Code</label>
                 <div class="mt-2">
-                    <input type="text" id="code" class="w-full py-2 text-gray-900 border-gray-300 text-sm" v-model="form.code">
+                    <input type="text" id="code" class="w-full py-2 text-gray-300 border-gray-300 text-sm" v-model="form.code">
                     <div v-if="form.errors.confirmTwoFactorAuthentication" class="text-sm text-red-500 mt-2">
                         {{ form.errors.confirmTwoFactorAuthentication.code }}
                     </div>
@@ -50,7 +50,7 @@ const submit = () => {
             </div>
 
             <div>
-                <button type="submit" class="flex w-full justify-center bg-blue-500 px-3 py-2 text-sm font-semibold text-white disabled:opacity-50" :disabled="form.processing">
+                <button type="submit" class="flex w-full justify-center bg-sky-500 px-3 py-2 text-sm font-semibold text-white disabled:opacity-50" :disabled="form.processing">
                     Continue
                 </button>
             </div>
