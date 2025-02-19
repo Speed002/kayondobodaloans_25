@@ -12,23 +12,20 @@ defineOptions({ layout: Default })
         <div class="max-w-5xl mx-auto md:grid grid-cols-7 gap-6">
             <div class="col-span-2 space-y-3 md:block sm:flex">
                 <div class="space-y-6">
-                    <div class="space-y-2">
-                        <button class="bg-transparent-dark p-2 text-sm tracking-tighter rounded-md flex items-center">
-                            <UserCircleIcon class="h-4 w-4"/>&nbsp;
-                            Messages from the site
-                        </button>
+                    <div class="bg-nav-blue w-full md:w-fit p-2 text-sm tracking-tighter rounded-md flex items-center">
+                        <span class="text-gray-300">Messages from the site</span>
                     </div>
                 </div>
             </div>
             <div class="col-span-5 space-y-3">
-                <p class="mb-3">Messages</p>
+                <p class="mb-3 text-sm">Started with the latest</p>
                 <div class="bg-transparent-dark rounded-md -space-y-2 text-sm">
                     <Disclosure as="nav" v-slot="{ open }">
                         <div class="p-3 rounded-md space-y-3">
                             <div class="flex items-center justify-between hover:text-sky-500 hover:cursor-pointer">
                                 <p>Wasswa Speed | 0776230011 | 23 minutes ago</p>
                                 <DisclosureButton class="hover:text-sky-500 hover:cursor-pointer">
-                                    <PencilSquareIcon class="block h-6 w-6" />
+                                    <PencilSquareIcon class="block h-4 w-4" />
                                 </DisclosureButton>
                             </div>
                             <!-- displayed content -->

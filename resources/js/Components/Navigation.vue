@@ -31,11 +31,11 @@ const logout = () => {
                             <Link :href="route('clients')" class="inline-flex items-center border-b-2 border-transparent hover:border-gray-200 text-sm text-gray-300" :class="{ '!border-blue-500': $page.props.ziggy.route_name === 'clients' }">
                                 Clients
                             </Link>
-                            <Link :href="route('messages')" class="inline-flex items-center border-b-2 border-transparent hover:border-gray-200 text-sm text-gray-300" :class="{ '!border-blue-500': $page.props.ziggy.route_name === 'messages' }">
-                                Messages
-                            </Link>
                             <Link :href="route('create.create')" class="inline-flex items-center border-b-2 border-transparent hover:border-gray-200 text-sm text-gray-300" :class="{ '!border-blue-500': $page.props.ziggy.route_name === 'create.create' }">
                                 Add client
+                            </Link>
+                            <Link :href="route('messages')" class="inline-flex items-center border-b-2 border-transparent hover:border-gray-200 text-sm text-gray-300" :class="{ '!border-blue-500': $page.props.ziggy.route_name === 'messages' }">
+                                Messages
                             </Link>
                         </div>
                         <div class="hidden sm:flex sm:ml-6 space-x-8" v-if="!$page.props.auth.user">
@@ -85,7 +85,7 @@ const logout = () => {
         </div>
 
         <DisclosurePanel class="sm:hidden">
-            <div class="spacey-1 pb-3">
+            <div class="spacey-1 pb-3 font-mono text-sm">
                 <!-- <Link :href="route('home')" class="link block py-2 px-8 font-medium text-gray-300 border-l-2 border-transparent" :class="{ 'border-blue-500': $page.props.ziggy.route_name === 'home' }">
                     Home
                 </Link> -->

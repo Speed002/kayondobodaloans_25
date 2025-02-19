@@ -9,7 +9,7 @@ defineOptions({ layout: Default })
 <template>
     <div class="p-8 font-mono">
         <div class="max-w-5xl mx-auto space-y-5">
-            <h3>Dashboard</h3>
+            <h3 class="text-sm">Dashboard</h3>
             <div class="flex-grow portal rounded-md">
                 <div class="flex items-center justify-between">
                     <div>
@@ -25,12 +25,12 @@ defineOptions({ layout: Default })
                 </div>
             </div>
             <div class="flex-grow portal-mini rounded-md space-y-1">
-                Recent message on <span class="bg-cyan-950 p-1 rounded-md">12/12/12</span> <span class="bg-cyan-950 p-1 rounded-md">2:12PM</span> by {{ $page.props.auth.user.name }}
+                <span class="text-sm">Recently received message on <span class="bg-cyan-950 p-1 rounded-md">12/12/12</span> <span class="bg-cyan-950 p-1 rounded-md">2:12 PM</span> by {{ $page.props.auth.user.name }}</span>
                 <p class="text-sm text-gray-400">
                     kasamba Mark Edward, CM98347632387. UBF 200H. Agreement date:[12/12/12], at Kireka >
                 </p>
             </div>
-            <h3>Analytics</h3>
+            <h3 class="text-sm">Analytics</h3>
             <div class="flex items-center justify-between md:justify-start sm:justify-start space-x-3 rounded-md text-sm">
                 <div class="portal rounded-md flex items-center ">
                     <span class="text-sky-500">12&nbsp;</span>
@@ -46,7 +46,7 @@ defineOptions({ layout: Default })
                 </div>
             </div>
             <div class="flex-grow portal-mini rounded-md space-y-1">
-                Recently added client on <span class="bg-cyan-950 p-1 rounded-md">12/12/12</span> <span class="bg-cyan-950 p-1 rounded-md">2:12PM</span>, added by {{ $page.props.auth.user.name }}
+                <span class="text-sm">Recently added client on <span class="bg-cyan-950 p-1 rounded-md">12/12/12</span> <span class="bg-cyan-950 p-1 rounded-md">2:12 PM</span>, added by {{ $page.props.auth.user.name }}</span>
                 <p class="text-sm text-gray-400">
                     kasamba Mark Edward, CM98347632387. UBF 200H. Agreement date:[12/12/12], at Kireka >
                 </p>

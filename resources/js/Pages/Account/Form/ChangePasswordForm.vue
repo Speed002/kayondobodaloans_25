@@ -25,7 +25,7 @@ const submit = () => {
             <div>
                 <label for="current_password" class="text-sm font-medium text-gray-300">Current password</label>
                 <div class="mt-2">
-                    <input type="password" id="current_password" class="w-full py-2 text-gray-900 border-gray-300 text-sm" v-model="form.current_password">
+                    <input type="password" id="current_password" class="w-full py-2 text-gray-900 border-gray-300 text-sm rounded-md" v-model="form.current_password">
                     <div v-if="form.errors.current_password" class="text-sm text-red-500 mt-2">
                         {{ form.errors.current_password }}
                     </div>
@@ -35,7 +35,7 @@ const submit = () => {
             <div>
                 <label for="password" class="text-sm font-medium text-gray-300">Password</label>
                 <div class="mt-2">
-                    <input type="password" id="password" class="w-full py-2 text-gray-900 border-gray-300 text-sm" v-model="form.password">
+                    <input type="password" id="password" class="w-full py-2 text-gray-900 border-gray-300 text-sm rounded-md" v-model="form.password">
                     <div v-if="form.errors.password" class="text-sm text-red-500 mt-2">
                         {{ form.errors.password }}
                     </div>
@@ -45,7 +45,7 @@ const submit = () => {
             <div>
                 <label for="password_confirmation" class="text-sm font-medium text-gray-300">Confirm password</label>
                 <div class="mt-2">
-                    <input type="password" id="password_confirmation" class="w-full py-2 text-gray-900 border-gray-300 text-sm" v-model="form.password_confirmation">
+                    <input type="password" id="password_confirmation" class="w-full py-2 text-gray-900 border-gray-300 text-sm rounded-md" v-model="form.password_confirmation">
                     <div v-if="form.errors.password_confirmation" class="text-sm text-red-500 mt-2">
                         {{ form.errors.password_confirmation }}
                     </div>
@@ -53,7 +53,7 @@ const submit = () => {
             </div>
 
             <div>
-                <button type="submit" class="flex w-full justify-center bg-sky-500 px-3 py-2 text-sm font-semibold text-white disabled:opacity-50" :disabled="form.processing">
+                <button type="submit" class="flex w-full justify-center bg-sky-500 px-3 py-2 text-sm font-semibold text-white disabled:opacity-50 rounded-sm" :disabled="form.processing">
                     Change password
                 </button>
             </div>
