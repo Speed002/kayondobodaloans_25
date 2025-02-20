@@ -61,7 +61,7 @@ const photoPreview = computed(() => {
                 </div>
             </div>
 
-            <div>
+            <!-- <div>
                 <label for="photo" class="text-sm font-medium text-gray-300">Profile photo</label>
                 <div class="flex mt-2 items-center space-x-3">
                     <div>
@@ -74,7 +74,7 @@ const photoPreview = computed(() => {
                         <input type="file" id="photo" class="sr-only" v-on:change="photo = $event.target.files[0]">
                     </div>
                 </div>
-            </div>
+            </div> -->
 
             <div>
                 <button type="submit" class="flex w-full justify-center bg-sky-500 px-3 py-2 text-sm font-semibold text-white disabled:opacity-50 rounded-sm" :disabled="form.processing">

@@ -32,7 +32,7 @@ const logout = () => {
                                 Clients
                             </Link>
                             <Link :href="route('create.create')" class="inline-flex items-center border-b-2 border-transparent hover:border-gray-200 text-sm text-gray-300" :class="{ '!border-blue-500': $page.props.ziggy.route_name === 'create.create' }">
-                                Add client
+                                Create
                             </Link>
                             <Link :href="route('messages')" class="inline-flex items-center border-b-2 border-transparent hover:border-gray-200 text-sm text-gray-300" :class="{ '!border-blue-500': $page.props.ziggy.route_name === 'messages' }">
                                 Messages
@@ -99,7 +99,7 @@ const logout = () => {
                     Clients
                 </Link>
                 <Link :href="route('create.create')" class="link block py-2 px-8 font-medium text-gray-300 border-l-2 border-transparent flex items-center" :class="{ 'border-blue-500': $page.props.ziggy.route_name === 'create.create' }">
-                    Add client
+                    Create
                 </Link>
             </div>
             <div class="spacey-1 pb-3" v-if="!$page.props.auth.user">

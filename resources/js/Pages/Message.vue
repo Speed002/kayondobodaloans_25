@@ -1,7 +1,7 @@
 <script setup>
 import { Head } from '@inertiajs/vue3'
 import Default from '@/Layouts/Default.vue'
-import { UserCircleIcon, BanknotesIcon, UsersIcon, TruckIcon, DocumentArrowDownIcon, PencilSquareIcon, DocumentDuplicateIcon, DocumentCheckIcon, DocumentIcon, FilmIcon, ArrowDownLeftIcon, DocumentTextIcon, FaceSmileIcon, InformationCircleIcon } from '@heroicons/vue/24/outline';
+import { UserCircleIcon, BanknotesIcon, UsersIcon, TruckIcon, DocumentArrowDownIcon, PencilSquareIcon, DocumentDuplicateIcon, DocumentCheckIcon, DocumentIcon, FilmIcon, ArrowDownLeftIcon, DocumentTextIcon, FaceSmileIcon, InformationCircleIcon, EnvelopeIcon } from '@heroicons/vue/24/outline';
 import { Disclosure, DisclosurePanel, DisclosureButton } from '@headlessui/vue'
 
 defineOptions({ layout: Default })
@@ -9,11 +9,14 @@ defineOptions({ layout: Default })
 
 <template>
     <div class="p-8 font-mono">
-        <div class="max-w-5xl mx-auto md:grid grid-cols-7 gap-6">
+        <div class="max-w-5xl mx-auto md:grid grid-cols-7 gap-6 md:space-y-0 space-y-3">
             <div class="col-span-2 space-y-3 md:block sm:flex">
-                <div class="space-y-6">
-                    <div class="bg-nav-blue w-full md:w-fit p-2 text-sm tracking-tighter rounded-md flex items-center">
-                        <span class="text-gray-300">Messages from the site</span>
+                <div class="space-y-3">
+                    <div class="bg-nav-blue w-full md:w-fit p-2 text-sm tracking-tighter rounded-md flex items-center shadow-lg">
+                        <span class="text-gray-300 flex items-center">
+                            <EnvelopeIcon class="w-4 h-4"/>&nbsp;
+                            Messages from the site
+                        </span>
                     </div>
                 </div>
             </div>

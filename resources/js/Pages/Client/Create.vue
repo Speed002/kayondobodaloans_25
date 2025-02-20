@@ -1,45 +1,97 @@
 <script setup>
-import { Head } from '@inertiajs/vue3'
+import { Head, useForm } from '@inertiajs/vue3'
 import Default from '@/Layouts/Default.vue'
-import { UserCircleIcon } from '@heroicons/vue/24/outline';
+import Navigation from './Create/Navigation.vue';
+import useStep from '../../composables/useStep';
+import PersonalInfoForm from './Create/Forms/PersonalInfoForm.vue';
+import MotorInfoForm from './Create/Forms/MotorInfoForm.vue';
+import RefereeInfoForm from './Create/Forms/RefereeInfoForm.vue';
+import LoanInfoForm from './Create/Forms/LoanInfoForm.vue';
+import ReviewForm from './Create/Forms/ReviewForm.vue';
 
+const {step, prevStep, nextStep} = useStep()
 defineOptions({ layout: Default })
+
+const form = useForm({
+    name: '',
+    nin: '',
+    dob: '',
+    contact: '',
+    occupation: '',
+    residence: '',
+    stage_name: '',
+    date_of_agreement: '',
+    father_name: '',
+    father_contact: '',
+    mother_name: '',
+    mother_contact: '',
+    type: '',
+    make: '',
+    registration: '',
+    color: '',
+    engine: '',
+    chasis: '',
+    condition: '',
+    registered_names: '',
+    others: '',
+    initial_deposit: '',
+    weekly_deposit: '',
+    agreed_months: '',
+    total_weeks: '',
+    selling_price: '',
+    starting_week: '',
+    agreement_place: ''
+})
+
+const submitForm = () => {
+    form.post('/submit-form', {
+        onSuccess: () => {
+            alert('Form submitted successfully!')
+        }
+    })
+}
 </script>
 
 <template>
     <div class="p-8 font-mono">
         <div class="max-w-5xl mx-auto md:grid grid-cols-7 gap-6">
             <div class="col-span-2 space-y-3 md:block sm:flex">
-                <!-- Main Card -->
-                <div class="bg-nav-blue w-full md:w-fit p-2 text-sm tracking-tighter rounded-md flex items-center">
-                    <span class="text-gray-300">Creating client</span>
-                </div>
+                <!-- Emitting the step event -->
+                <Navigation :step="step" @update:step="step = $event"/>
             </div>
             <div class="col-span-5">
-                <p class="my-3">Personal information</p>
-                <div class="">
-                    <form class="space-y-3">
-                        <div class="space-y-2">
-                            <label for="name">Name</label>
-                            <input type="text" id="name" class="flex-grow w-full text-gray-900 border-gray-300 text-sm rounded-md" placeholder="eg. John Doe">
-                        </div>
-                        <div class="space-y-2">
-                            <label for="name">Nin Number</label>
-                            <input type="text" id="name" class="flex-grow w-full text-gray-900 border-gray-300 text-sm rounded-md" placeholder="eg. Nin Number">
-                        </div>
-                        <div class="space-y-2">
-                            <label for="name">Others</label>
-                            <input type="text" id="name" class="flex-grow w-full text-gray-900 border-gray-300 text-sm rounded-md" placeholder="eg. Other Details">
-                        </div>
-                        <div class="flex items-center justify-between text-sm">
-                            <button class="bg-nav-blue p-2 rounded-md">previous</button>
-                            <button class="bg-nav-blue p-2 rounded-md">Next</button>
-                        </div>
-                    </form>
-                </div>
+
+                <p class="md:my-0 my-3">Step {{ step }} of 5</p>
+                <!-- {{ form }} -->
+                <form @submit.prevent="submitForm" class="space-y-3">
+                    <div v-if="step === 1" class="space-y-2">
+                        <PersonalInfoForm :form="form"/>
+                    </div>
+
+                    <div v-if="step === 2" class="space-y-2">
+                        <MotorInfoForm :form="form"/>
+                    </div>
+
+                    <div v-if="step === 3" class="space-y-2">
+                        <RefereeInfoForm :form="form"/>
+                    </div>
+
+                    <div v-if="step === 4" class="space-y-2">
+                        <LoanInfoForm :form="form"/>
+                    </div>
+
+                    <div v-if="step === 5" class="space-y-2">
+                        <ReviewForm :form="form"/>
+                    </div>
+
+                    <div class="flex justify-between">
+                        <button class="text-sky-500 p-1 rounded-md text-sm" v-if="step !== 1" type="button" @click="prevStep" :disabled="step === 1">Previous</button>
+                        <button class="text-sky-500 p-1 rounded-md text-sm" v-if="step !== 5" type="button" @click="nextStep" :disabled="step === 5">Next</button>
+                        <button type="submit" v-if="step === 5" class="bg-nav-blue text-gray-300 p-1 rounded-md text-sm">Submit</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
-
-    <Head title="Client Name" />
+    <Head title="Create client"/>
 </template>

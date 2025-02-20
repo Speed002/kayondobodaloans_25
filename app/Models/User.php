@@ -51,9 +51,9 @@ class User extends Authenticatable implements MustVerifyEmail
 
     public function avatarUrl()
     {
-        if ($this->profile_photo_path) {
-            return Storage::disk('local')->url($this->profile_photo_path);
-        }
+        // if ($this->profile_photo_path) {
+        //     return Storage::disk('local')->url($this->profile_photo_path);
+        // }
 
         return "https://ui-avatars.com/api/?name=" . urlencode($this->name);
     }
