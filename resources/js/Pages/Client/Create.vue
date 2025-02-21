@@ -56,7 +56,12 @@ const form = useForm({
 })
 
 const createClient = () => {
-    console.log(123)
+    form.post(route('store.client'), {
+        preserveScroll:true,
+        onSuccess:() => {
+            form.reset()
+        }
+    })
 }
 </script>
 

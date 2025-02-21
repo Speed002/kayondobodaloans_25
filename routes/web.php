@@ -10,6 +10,7 @@ use App\Http\Controllers\Auth\TwoFactorIndexController;
 use App\Http\Controllers\ClientCreateController;
 use App\Http\Controllers\ClientIndexController;
 use App\Http\Controllers\ClientShowController;
+use App\Http\Controllers\ClientStoreController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MessageIndexController;
@@ -58,7 +59,8 @@ if (Features::enabled(Features::resetPasswords())) {
 
 Route::get('/clients', ClientIndexController::class)->name('clients')->middleware('verified');
 Route::get('/client', ClientShowController::class)->name('client')->middleware('verified');
-Route::get('/client/create', ClientCreateController::class)->name('create.create')->middleware('verified');
+Route::get('/client/create', ClientCreateController::class)->name('create.client')->middleware('verified');
+Route::post('/client/store', ClientStoreController::class)->name('store.client');
 Route::get('/messages', MessageIndexController::class)->name('messages')->middleware('verified');
 
 // Route::multisteps();
