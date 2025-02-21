@@ -19,7 +19,7 @@ defineOptions({ layout: Default })
                             You have <span class="text-sky-500">4</span> unread messages from the site.
                         </p>
                     </div>
-                    <Link :href="route('create.create')" class="bg-sky-700 p-2 text-sm tracking-tighter rounded-md flex items-center justify-between hover:bg-transparent-dark">
+                    <Link :href="route('create.client')" class="bg-sky-700 p-2 text-sm tracking-tighter rounded-md flex items-center justify-between hover:bg-transparent-dark">
                         <PlusIcon class="w-4 h-4"/>
                         &nbsp;Add client
                     </Link>

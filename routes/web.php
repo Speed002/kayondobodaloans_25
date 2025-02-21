@@ -7,6 +7,8 @@ use App\Http\Controllers\Auth\RecoverIndexController;
 use App\Http\Controllers\Auth\RegisterIndexController;
 use App\Http\Controllers\Auth\ResetIndexController;
 use App\Http\Controllers\Auth\TwoFactorIndexController;
+use App\Http\Controllers\ClientCloneIndexController;
+use App\Http\Controllers\ClientCloneStoreController;
 use App\Http\Controllers\ClientCreateController;
 use App\Http\Controllers\ClientIndexController;
 use App\Http\Controllers\ClientShowController;
@@ -62,6 +64,9 @@ Route::get('/client', ClientShowController::class)->name('client')->middleware('
 Route::get('/client/create', ClientCreateController::class)->name('create.client')->middleware('verified');
 Route::post('/client/store', ClientStoreController::class)->name('store.client');
 Route::get('/messages', MessageIndexController::class)->name('messages')->middleware('verified');
+// clone client
+Route::get('/client/{client}/clone', ClientCloneIndexController::class)->name('client.clone');
+Route::post('/client/clone/store', ClientCloneStoreController::class)->name('client.clone.store');
 
 // Route::multisteps();
 
