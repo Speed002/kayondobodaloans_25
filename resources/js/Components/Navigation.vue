@@ -11,7 +11,7 @@ const logout = () => {
 <template>
     <Disclosure as="nav" v-slot="{ open }">
         <div id="navbar" class="mx-auto max-w-7xl px-8">
-            <div class="flex h-16 justify-between relative">
+            <div class="mx-auto max-w-5xl flex h-16 justify-between relative">
                 <div class="flex grow">
                     <div class="flex items-center sm:mr-6">
                         <Link href="#" class="font-semibold text-md flex items-center space-x-0">

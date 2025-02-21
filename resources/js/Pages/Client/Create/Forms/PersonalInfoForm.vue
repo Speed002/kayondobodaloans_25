@@ -10,6 +10,9 @@
         <div>
             <label for="name">Name</label>
             <input type="text" v-model="form.name" class="w-full text-gray-900 border-gray-300 text-sm rounded-md" placeholder="e.g., John Doe">
+            <div v-if="form.errors.name">
+                {{ form.errors.name }}
+            </div>
         </div>
         <div>
             <label for="nin">NIN Number</label>

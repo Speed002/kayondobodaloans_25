@@ -25,30 +25,38 @@ const form = useForm({
     father_contact: '',
     mother_name: '',
     mother_contact: '',
+    // --------------------------
     type: '',
+    registered_names: '',
     make: '',
     registration: '',
     color: '',
     engine: '',
     chasis: '',
     condition: '',
-    registered_names: '',
-    others: '',
+    // --------------------------
+    referee_one_name:'',
+    referee_one_contact:'',
+    referee_one_relationship:'',
+    referee_two_name:'',
+    referee_two_contact:'',
+    referee_two_relationship:'',
+    stage_chairperson_name:'',
+    stage_chairperson_contact:'',
+    lc_chairperson_name:'',
+    lc_chairperson_contact:'',
+    // --------------------------
     initial_deposit: '',
     weekly_deposit: '',
     agreed_months: '',
     total_weeks: '',
     selling_price: '',
-    starting_week: '',
+    starting_week_date: '',
     agreement_place: ''
 })
 
-const submitForm = () => {
-    form.post('/submit-form', {
-        onSuccess: () => {
-            alert('Form submitted successfully!')
-        }
-    })
+const createClient = () => {
+    console.log(123)
 }
 </script>
 
@@ -63,7 +71,7 @@ const submitForm = () => {
 
                 <p class="md:my-0 my-3">Step {{ step }} of 5</p>
                 <!-- {{ form }} -->
-                <form @submit.prevent="submitForm" class="space-y-3">
+                <form @submit.prevent="createClient" class="space-y-3">
                     <div v-if="step === 1" class="space-y-2">
                         <PersonalInfoForm :form="form"/>
                     </div>

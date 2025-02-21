@@ -35,7 +35,7 @@ defineProps({
         </div>
         <div>
             <label for="starting_week">Date of Starting Week</label>
-            <input type="date" v-model="form.starting_week" class="w-full text-gray-900 border-gray-300 text-sm rounded-md">
+            <input type="date" v-model="form.starting_week_date" class="w-full text-gray-900 border-gray-300 text-sm rounded-md">
         </div>
     </div>
 

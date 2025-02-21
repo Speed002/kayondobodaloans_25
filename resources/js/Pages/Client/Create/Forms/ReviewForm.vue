@@ -6,7 +6,7 @@ defineProps({
 
 <template>
     <!-- Step 4 Fields (Financial Agreement) -->
-    <h3 class="font-bold text-lg">Review Client Data and Save</h3>
+    <h3 class="font-bold text-sm">Review Client Data and Save</h3>
     <table class="table-auto w-full border-collapse text-sm">
         <thead class="text-left">
             <tr>
@@ -27,13 +27,13 @@ defineProps({
             <tr><td class="border px-4 py-1 w-1/2">Father's Contact</td><td class="border px-4 py-1 w-1/2">{{ form.father_contact }}</td></tr>
             <tr><td class="border px-4 py-1 w-1/2">Mother's Name</td><td class="border px-4 py-1 w-1/2">{{ form.mother_name }}</td></tr>
             <tr><td class="border px-4 py-1 w-1/2">Mother's Contact</td><td class="border px-4 py-1 w-1/2">{{ form.mother_contact }}</td></tr>
-            <tr><td class="border px-4 py-1 w-1/2">Vehicle Type</td><td class="border px-4 py-1 w-1/2"></td></tr>
-            <tr><td class="border px-4 py-1 w-1/2">Vehicle Make</td><td class="border px-4 py-1 w-1/2"></td></tr>
-            <tr><td class="border px-4 py-1 w-1/2">Color</td><td class="border px-4 py-1 w-1/2"></td></tr>
-            <tr><td class="border px-4 py-1 w-1/2">Engine Number</td><td class="border px-4 py-1 w-1/2"></td></tr>
-            <tr><td class="border px-4 py-1 w-1/2">Chasis Number</td><td class="border px-4 py-1 w-1/2"></td></tr>
-            <tr><td class="border px-4 py-1 w-1/2">Registration Number</td><td class="border px-4 py-1 w-1/2"></td></tr>
-            <tr><td class="border px-4 py-1 w-1/2">Condition</td><td class="border px-4 py-1 w-1/2"></td></tr>
+            <tr><td class="border px-4 py-1 w-1/2">Vehicle Type</td><td class="border px-4 py-1 w-1/2">{{ form.type }}</td></tr>
+            <tr><td class="border px-4 py-1 w-1/2">Vehicle Make</td><td class="border px-4 py-1 w-1/2">{{ form.make }}</td></tr>
+            <tr><td class="border px-4 py-1 w-1/2">Color</td><td class="border px-4 py-1 w-1/2">{{ form.color }}</td></tr>
+            <tr><td class="border px-4 py-1 w-1/2">Engine Number</td><td class="border px-4 py-1 w-1/2">{{ form.engine }}</td></tr>
+            <tr><td class="border px-4 py-1 w-1/2">Chasis Number</td><td class="border px-4 py-1 w-1/2">{{ form.chasis }}</td></tr>
+            <tr><td class="border px-4 py-1 w-1/2">Registration Number</td><td class="border px-4 py-1 w-1/2">{{ form.registration }}</td></tr>
+            <tr><td class="border px-4 py-1 w-1/2">Condition</td><td class="border px-4 py-1 w-1/2">{{ form.condition }}</td></tr>
             <tr><td class="border px-4 py-1 w-1/2">Referee One Name</td><td class="border px-4 py-1 w-1/2">{{ form.referee_one_name }}</td></tr>
             <tr><td class="border px-4 py-1 w-1/2">Referee One Contact</td><td class="border px-4 py-1 w-1/2">{{ form.referee_one_contact }}</td></tr>
             <tr><td class="border px-4 py-1 w-1/2">Referee One Relationship</td><td class="border px-4 py-1 w-1/2">{{ form.referee_one_relationship }}</td></tr>
@@ -44,13 +44,13 @@ defineProps({
             <tr><td class="border px-4 py-1 w-1/2">Stage Chairperson Contact</td><td class="border px-4 py-1 w-1/2">{{ form.stage_chairperson_contact }}</td></tr>
             <tr><td class="border px-4 py-1 w-1/2">LC Chairperson Name</td><td class="border px-4 py-1 w-1/2">{{ form.lc_chairperson_name }}</td></tr>
             <tr><td class="border px-4 py-1 w-1/2">LC Chairperson Contact</td><td class="border px-4 py-1 w-1/2">{{ form.lc_chairperson_contact }}</td></tr>
-            <tr><td class="border px-4 py-1 w-1/2">Initial Deposit</td><td class="border px-4 py-1 w-1/2"></td></tr>
-            <tr><td class="border px-4 py-1 w-1/2">Weekly Deposit</td><td class="border px-4 py-1 w-1/2"></td></tr>
-            <tr><td class="border px-4 py-1 w-1/2">Agreed Months</td><td class="border px-4 py-1 w-1/2"></td></tr>
-            <tr><td class="border px-4 py-1 w-1/2">Total Weeks</td><td class="border px-4 py-1 w-1/2"></td></tr>
-            <tr><td class="border px-4 py-1 w-1/2">Selling Price</td><td class="border px-4 py-1 w-1/2"></td></tr>
-            <tr><td class="border px-4 py-1 w-1/2">Date of Starting Week</td><td class="border px-4 py-1 w-1/2"></td></tr>
-            <tr><td class="border px-4 py-1 w-1/2">Place of Agreement</td><td class="border px-4 py-1 w-1/2"></td></tr>
+            <tr><td class="border px-4 py-1 w-1/2">Initial Deposit</td><td class="border px-4 py-1 w-1/2">{{ form.initial_deposit }}</td></tr>
+            <tr><td class="border px-4 py-1 w-1/2">Weekly Deposit</td><td class="border px-4 py-1 w-1/2">{{ form.weekly_deposit }}</td></tr>
+            <tr><td class="border px-4 py-1 w-1/2">Agreed Months</td><td class="border px-4 py-1 w-1/2">{{ form.agreed_months }}</td></tr>
+            <tr><td class="border px-4 py-1 w-1/2">Total Weeks</td><td class="border px-4 py-1 w-1/2">{{ form.total_weeks }}</td></tr>
+            <tr><td class="border px-4 py-1 w-1/2">Selling Price</td><td class="border px-4 py-1 w-1/2">{{ form.selling_price }}</td></tr>
+            <tr><td class="border px-4 py-1 w-1/2">Date of Starting Week</td><td class="border px-4 py-1 w-1/2">{{ form.starting_week_date }}</td></tr>
+            <tr><td class="border px-4 py-1 w-1/2">Place of Agreement</td><td class="border px-4 py-1 w-1/2">{{ form.agreement_place }}</td></tr>
         </tbody>
     </table>
 </template>
