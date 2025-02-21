@@ -57,4 +57,8 @@ class User extends Authenticatable implements MustVerifyEmail
 
         return "https://ui-avatars.com/api/?name=" . urlencode($this->name);
     }
+
+    public function clients(){
+        return $this->hasMany(Client::class);
+    }
 }
