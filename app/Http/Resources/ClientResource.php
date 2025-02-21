@@ -28,6 +28,8 @@ class ClientResource extends JsonResource
             'father_contact' => $this->father_contact,
             'mother_name' => $this->mother_name,
             'mother_contact' => $this->mother_contact,
+            'motor' => MotorResource::collection($this->whenLoaded('motor')),
+
         ];
     }
 }

@@ -20,7 +20,9 @@ class Motor extends Model
         'registered_names',
     ];
 
-    public function user(){
+    public function user()
+    {
         return $this->belongsTo(User::class);
     }
 }
+

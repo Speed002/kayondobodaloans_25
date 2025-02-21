@@ -14,7 +14,7 @@ class ClientIndexController extends Controller
     }
     public function __invoke(){
         return inertia()->render('Client/Clients', [
-            // 'clients' => ClientResource::collection(Client::with(['motor', 'referee', 'loan'])->get())
+            'clients' => ClientResource::collection(Client::with(['motor', 'referee', 'loan'])->get())
         ]);
     }
 }
