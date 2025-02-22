@@ -1,5 +1,5 @@
 <script setup>
-import { UserCircleIcon, BanknotesIcon, UsersIcon, TruckIcon, DocumentArrowDownIcon, DocumentDuplicateIcon,InformationCircleIcon } from '@heroicons/vue/24/outline';
+import { UserCircleIcon, BanknotesIcon, UsersIcon, TruckIcon, DocumentArrowDownIcon, DocumentDuplicateIcon,InformationCircleIcon, ArrowLeftIcon } from '@heroicons/vue/24/outline';
 import { Link } from '@inertiajs/vue3';
 
 defineProps({
@@ -12,6 +12,10 @@ const emit = defineEmits(['update:info']);
 </script>
 
 <template>
+    <Link :href="route('clients')" class="flex items-center justify-start w-fit space-x-1 bg-nav-blue rounded-md p-1 shadow-lg hover:bg-transparent-dark">
+        <ArrowLeftIcon class="w-3 h-3 text-sky-500 hover:bg-transparent-dark"/>
+        <span class="text-sm text-gray-400 tracking-tighter">Go back</span>
+    </Link>
     <div class="relative w-fit md:mb-6">
         <!-- Fake Background Copy -->
         <div v-if="client.motor.length > 1">
@@ -20,7 +24,7 @@ const emit = defineEmits(['update:info']);
         </div>
         <!-- Main Card -->
         <div class="portal relative rounded-md flex flex-col items-center space-y-1 bg-nav-blue p-4 shadow-lg">
-            <Link :href="route('client.clone', `${client.id}`)" id="clone" class="absolute top-1 right-1 bg-cyan-950 text-white md:text-sm text-xs hover:cursor-pointer p-1 rounded-md">
+            <Link :href="route('client.clone', `${client.id}`)" id="clone" class="absolute top-1 right-1 bg-cyan-950 text-white md:text-sm text-xs hover:cursor-pointer hover:bg-sky-800 p-1 rounded-md">
                 <DocumentDuplicateIcon class="h-4 w-4"/>
             </Link>
             <span v-if="client.motor.length > 1" id="clone" class="absolute top-7 right-1 bg-cyan-950 text-white md:text-sm text-xs px-2 rounded-md">

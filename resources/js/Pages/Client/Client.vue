@@ -28,7 +28,7 @@ defineProps({
 <template>
     <div class="p-8 font-mono">
         <div class="max-w-5xl mx-auto md:grid grid-cols-7 gap-6 md:space-y-0 space-y-3 ">
-            <div class="col-span-2 space-y-3 flex items-center gap-3 sm:flex sm:items-start items-start md:block sm:flex sm:gap-6">
+            <div class="col-span-2 space-y-5 flex items-center gap-3 sm:flex sm:items-start items-start md:block sm:flex sm:gap-6">
                 <Navigation :client="client" :info="info" @update:info="info = $event" :motor="filtered_motor"/>
             </div>
             <div class="col-span-5 space-y-3">

@@ -1,6 +1,7 @@
 <script setup>
 import { Disclosure, DisclosurePanel, DisclosureButton } from '@headlessui/vue';
 import { PencilSquareIcon } from '@heroicons/vue/24/outline';
+import { useForm } from '@inertiajs/vue3'
 
 defineProps({
     motor: Object
@@ -9,6 +10,13 @@ defineProps({
 const fields = [
     'registration','type', 'make', 'color', 'chasis', 'engine', 'condition', 'registered_names'
 ];
+
+// trying to loop through the form fields in order to edit and update each one
+// const form = useForm({
+//     fields.forEach(field => {
+//         field:field
+//     })
+// })
 </script>
 
 <template>
@@ -16,7 +24,7 @@ const fields = [
         <Disclosure v-for="field in fields" :key="field" as="nav" v-slot="{ open }">
             <div class="p-3 rounded-md space-y-3">
                 <div class="flex items-center justify-between hover:text-sky-500 hover:cursor-pointer">
-                    <p class="capitalize">{{ field }}: <small>{{ motor[0][field] }}</small></p>
+                    <p class="capitalize">{{ field }}: <small class="text-sky-500">{{ motor[0][field] }}</small></p>
                     <DisclosureButton class="hover:text-sky-500 hover:cursor-pointer">
                         <PencilSquareIcon class="block h-4 w-4" />
                     </DisclosureButton>

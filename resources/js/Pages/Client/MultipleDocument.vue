@@ -7,7 +7,7 @@ defineProps({
 })
 </script>
 <template>
-    <p class="text-sm">Select to show more information </p>
+    <p v-if="client.motor.length > 1" class="text-sm">Select to see more information </p>
     <div class="flex justify-start flex-wrap gap-2">
         <Link :href="route('client.show', [`${client.id}`, `${motor.common_set_key}`])" v-for="motor in client.motor" v-bind:key="motor.id"  :client="client" class="bg-nav-blue p-2 relative rounded-md flex flex-col items-center space-y-1 hover:bg-transparent-dark hover:cursor-pointer shadow-lg"  :class="{'bg-transparent-dark': motor.common_set_key == common_key || client.motor.length == 1}">
             <span id="clone" class="absolute top-1 right-1 bg-cyan-950 text-white text-sm p-1 rounded-md">

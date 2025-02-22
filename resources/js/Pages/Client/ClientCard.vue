@@ -16,7 +16,7 @@ defineProps({
         </div>
         <!-- Main Card -->
         <div class="portal relative rounded-md flex flex-col items-center space-y-1 bg-gray-900 p-4 shadow-lg">
-            <Link :href="route('client.clone', `${client.id}`)" id="clone" class="absolute top-1 right-1 bg-cyan-950 text-white text-sm p-1 rounded-md">
+            <Link :href="route('client.clone', `${client.id}`)" id="clone" class="absolute top-1 right-1 bg-cyan-950 text-white text-sm p-1 rounded-md hover:bg-sky-800">
                 <DocumentDuplicateIcon class="h-4 w-4"/>
             </Link>
             <span v-if="client.motor.length > 1" id="clone" class="absolute top-7 right-1 bg-cyan-950 text-white text-sm px-2 rounded-md">

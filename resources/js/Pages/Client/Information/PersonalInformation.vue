@@ -1,6 +1,7 @@
 <script setup>
 import { Disclosure, DisclosurePanel, DisclosureButton } from '@headlessui/vue';
 import { PencilSquareIcon } from '@heroicons/vue/24/outline';
+import { useForm } from '@inertiajs/vue3'
 
 defineProps({ client: Object });
 
@@ -15,6 +16,17 @@ const fields = [
     { key: 'date_of_agreement', label: 'Date of Agreement', type: 'date' },
     { key: 'father_name', label: "Father's name", type: 'text' }
 ];
+
+const form = useForm({
+    // use mat instead
+    // fields.foreach((field)=> {
+
+    // })
+})
+
+const updateInfo = () => {
+
+}
 </script>
 
 <template>
@@ -23,13 +35,13 @@ const fields = [
         <Disclosure v-for="field in fields" :key="field.key" as="nav" v-slot="{ open }">
             <div class="p-3 rounded-md space-y-3">
                 <div class="flex items-center justify-between hover:text-sky-500 hover:cursor-pointer">
-                    <p>{{ field.label }}: <small>{{ client[field.key] }}</small></p>
+                    <p>{{ field.label }}: <small class="text-sky-500">{{ client[field.key] }}</small></p>
                     <DisclosureButton class="hover:text-sky-500 hover:cursor-pointer">
                         <PencilSquareIcon class="block h-4 w-4" />
                     </DisclosureButton>
                 </div>
                 <DisclosurePanel>
-                    <form class="space-y-2">
+                    <form v-on:submit.prevent="updateInfo" class="space-y-2">
                         <input
                             :type="field.type"
                             class="flex-grow w-full text-gray-900 border-gray-300 text-sm rounded-sm"
