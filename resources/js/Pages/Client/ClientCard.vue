@@ -8,7 +8,7 @@ defineProps({
 </script>
 
 <template>
-    <div class="relative w-fit">
+    <Link :href="route('client.show', `${client.id}`)" class="relative w-fit">
         <!-- Fake Background Copy -->
          <div v-if="client.motor.length > 1">
             <div class="absolute bottom-4 left-0 w-full h-full bg-gray-500 rounded-md scale-90 opacity-80"></div>
@@ -30,7 +30,7 @@ defineProps({
                 <span class="bg-cyan-950 p-1 rounded-md text-xs">English</span>
             </div>
         </div>
-    </div>
+    </Link>
 </template>
 <style scoped>
 .portal{

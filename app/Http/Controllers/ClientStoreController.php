@@ -1,13 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\Http\Requests\ClientStoreRequest;
-use App\Models\Client;
-use App\Models\Loan;
-use App\Models\Motor;
-use App\Models\Referee;
-use Illuminate\Http\Request;
 
 class ClientStoreController extends Controller
 {
@@ -18,6 +12,10 @@ class ClientStoreController extends Controller
 
     public function __invoke(ClientStoreRequest $request)
     {
+        // generate a constant random timestamp before pushing data to the database
+        $timestamp = now()->timestamp;
+        $common_set_key = $request->user()->generateUniqueNumber($timestamp);//id allowing multiple docs toexist
+
         // Create Client
         $client = $request->user()->clients()->create([
             'name' => $request->name,
@@ -45,6 +43,7 @@ class ClientStoreController extends Controller
             'condition' => $request->condition,
             'registration' => $request->registration,
             'registered_names' => $request->registered_names,
+            'common_set_key' => $common_set_key
         ]);
         // Create Referee
         $client->referee()->create([
@@ -59,6 +58,7 @@ class ClientStoreController extends Controller
             'stage_chairperson_contact' => $request->stage_chairperson_contact,
             'lc_chairperson_name' => $request->lc_chairperson_name,
             'lc_chairperson_contact' => $request->lc_chairperson_contact,
+            'common_set_key' => $common_set_key
         ]);
         // Create Loan
         $client->loan()->create([
@@ -70,8 +70,11 @@ class ClientStoreController extends Controller
             'selling_price' => $request->selling_price,
             'starting_week_date' => $request->starting_week_date,
             'agreement_place' => $request->agreement_place,
+            'common_set_key' => $common_set_key
         ]);
         return back()->with('toast', 'Client created successfully!');
     }
+
+
 
 }

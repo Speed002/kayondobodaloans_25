@@ -61,4 +61,10 @@ class User extends Authenticatable implements MustVerifyEmail
     public function clients(){
         return $this->hasMany(Client::class);
     }
+
+    public function generateUniqueNumber($timestamp = null)
+    {
+        $timestamp = $timestamp ?? now()->timestamp;
+        return $timestamp . mt_rand(1000, 9999);
+    }
 }

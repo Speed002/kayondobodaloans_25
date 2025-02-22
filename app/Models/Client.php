@@ -35,4 +35,5 @@ class Client extends Model
     public function loan(){
         return $this->hasMany(Loan::class);
     }
+
 }

@@ -12,6 +12,7 @@ use App\Http\Controllers\ClientCloneStoreController;
 use App\Http\Controllers\ClientCreateController;
 use App\Http\Controllers\ClientIndexController;
 use App\Http\Controllers\ClientShowController;
+use App\Http\Controllers\ClientSingleDocumentIndexController;
 use App\Http\Controllers\ClientStoreController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
@@ -60,14 +61,13 @@ if (Features::enabled(Features::resetPasswords())) {
 }
 
 Route::get('/clients', ClientIndexController::class)->name('clients')->middleware('verified');
-Route::get('/client', ClientShowController::class)->name('client')->middleware('verified');
+Route::get('/client/{client}/show/{key?}', ClientShowController::class)->name('client.show')->middleware('verified');
 Route::get('/client/create', ClientCreateController::class)->name('create.client')->middleware('verified');
 Route::post('/client/store', ClientStoreController::class)->name('store.client');
 Route::get('/messages', MessageIndexController::class)->name('messages')->middleware('verified');
 // clone client
 Route::get('/client/{client}/clone', ClientCloneIndexController::class)->name('client.clone');
 Route::post('/client/clone/store', ClientCloneStoreController::class)->name('client.clone.store');
-
 // Route::multisteps();
 
 require __DIR__ . '/fortify.php';

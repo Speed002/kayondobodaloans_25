@@ -17,6 +17,7 @@ class Loan extends Model
         'selling_price',
         'starting_week_date',
         'agreement_place',
+        'common_set_key'
     ];
 
     public function user(){

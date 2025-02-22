@@ -18,6 +18,7 @@ class Motor extends Model
         'condition',
         'registration',
         'registered_names',
+        'common_set_key'
     ];
 
     public function user()

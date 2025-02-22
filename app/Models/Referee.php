@@ -20,6 +20,7 @@ class Referee extends Model
         'stage_chairperson_contact',
         'lc_chairperson_name',
         'lc_chairperson_contact',
+        'common_set_key'
     ];
 
     public function user(){

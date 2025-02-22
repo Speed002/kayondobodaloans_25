@@ -24,6 +24,7 @@ class MotorResource extends JsonResource
             'condition' => $this->condition,
             'registration' => $this->registration,
             'registered_names' => $this->registered_names,
+            'common_set_key' => $this->common_set_key
         ];
     }
 }

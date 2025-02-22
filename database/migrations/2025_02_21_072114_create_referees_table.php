@@ -24,6 +24,7 @@ return new class extends Migration
             $table->string('stage_chairperson_contact');
             $table->string('lc_chairperson_name');
             $table->string('lc_chairperson_contact');
+            $table->string('common_set_key');
             $table->timestamps();
         });
     }

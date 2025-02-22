@@ -23,5 +23,5 @@ defineProps({
         <div v-else>No clients yet, please create!</div>
     </div>
 
-    <Head title="Dashboard" />
+    <Head title="Clients" />
 </template>

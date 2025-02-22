@@ -106,5 +106,5 @@ const createClient = () => {
             </div>
         </div>
     </div>
-    <Head title="Create client"/>
+    <Head title="Create"/>
 </template>

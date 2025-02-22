@@ -42,5 +42,5 @@ defineOptions({ layout: Default })
         </div>
     </div>
 
-    <Head title="Client Name" />
+    <Head title="Messages" />
 </template>

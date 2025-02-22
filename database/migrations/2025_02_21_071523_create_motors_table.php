@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('condition');
             $table->string('registration');
             $table->string('registered_names');
+            $table->string('common_set_key');
             $table->timestamps();
         });
     }

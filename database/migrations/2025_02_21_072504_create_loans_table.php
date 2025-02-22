@@ -21,6 +21,7 @@ return new class extends Migration
             $table->integer('selling_price');
             $table->date('starting_week_date');
             $table->string('agreement_place');
+            $table->string('common_set_key');
             $table->timestamps();
         });
     }
