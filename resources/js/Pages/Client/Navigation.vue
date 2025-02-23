@@ -12,7 +12,7 @@ const emit = defineEmits(['update:info']);
 </script>
 
 <template>
-    <Link :href="route('clients')" class="flex items-center justify-start w-fit space-x-1 bg-nav-blue rounded-md p-1 shadow-lg hover:bg-transparent-dark">
+    <Link :href="route('clients')" class="hidden md:flex md:items-center md:justify-start md:w-fit md:space-x-1 bg-nav-blue rounded-md p-1 shadow-lg hover:bg-transparent-dark">
         <ArrowLeftIcon class="w-3 h-3 text-sky-500 hover:bg-transparent-dark"/>
         <span class="text-sm text-gray-400 tracking-tighter">Go back</span>
     </Link>

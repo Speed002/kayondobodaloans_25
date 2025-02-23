@@ -17,6 +17,7 @@ use App\Http\Controllers\ClientStoreController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MessageIndexController;
+use App\Http\Controllers\UpdateClientPersonalInfoController;
 use Illuminate\Auth\Middleware\RequirePassword;
 use Illuminate\Support\Facades\Route;
 use Laravel\Fortify\Features;
@@ -69,5 +70,7 @@ Route::get('/messages', MessageIndexController::class)->name('messages')->middle
 Route::get('/client/{client}/clone', ClientCloneIndexController::class)->name('client.clone');
 Route::post('/client/clone/store', ClientCloneStoreController::class)->name('client.clone.store');
 // Route::multisteps();
+Route::patch('/client/update/personal/info/{client}/{field}', UpdateClientPersonalInfoController::class)->name('update.client.personal-info');
+
 
 require __DIR__ . '/fortify.php';
