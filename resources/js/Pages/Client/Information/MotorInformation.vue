@@ -3,7 +3,7 @@ import { Disclosure, DisclosurePanel, DisclosureButton } from '@headlessui/vue';
 import { PencilSquareIcon } from '@heroicons/vue/24/outline';
 import { useForm } from '@inertiajs/vue3'
 
-defineProps({
+const props = defineProps({
     motor: Object
 });
 
@@ -11,12 +11,15 @@ const fields = [
     'registration','type', 'make', 'color', 'chasis', 'engine', 'condition', 'registered_names'
 ];
 
-// trying to loop through the form fields in order to edit and update each one
-// const form = useForm({
-//     fields.forEach(field => {
-//         field:field
-//     })
-// })
+const form = useForm(
+    Object.fromEntries(fields.map(field => [field, props.motor[0][field] ?? '']))
+);
+
+const updateInfo = (field) => {
+    form.patch(route('update.client.motor-info', [`${props.motor[0].id}`, `${field}`]), {
+        preserveScroll:true,
+    })
+}
 </script>
 
 <template>
@@ -30,14 +33,14 @@ const fields = [
                     </DisclosureButton>
                 </div>
                 <DisclosurePanel>
-                    <form class="space-y-2">
+                    <form v-on:submit.prevent="updateInfo(field)" class="space-y-2">
                         <input
                             type="text"
                             class="flex-grow w-full text-gray-900 border-gray-300 text-sm rounded-sm"
-                            :value="motor[0][field]"
+                            v-model="form[field]"
                         />
                         <div class="flex items-center justify-end space-x-6 text-sm">
-                            <button class="text-sky-500 hover:text-gray-50">save</button>
+                            <button class="text-sky-500 hover:text-gray-50">Update</button>
                             <DisclosureButton class="text-rose-700 hover:text-gray-50">cancel</DisclosureButton>
                         </div>
                     </form>

@@ -17,7 +17,10 @@ use App\Http\Controllers\ClientStoreController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MessageIndexController;
+use App\Http\Controllers\UpdateClientLoanInfoController;
+use App\Http\Controllers\UpdateClientMotorInfoController;
 use App\Http\Controllers\UpdateClientPersonalInfoController;
+use App\Http\Controllers\UpdateClientRefereeInfoController;
 use Illuminate\Auth\Middleware\RequirePassword;
 use Illuminate\Support\Facades\Route;
 use Laravel\Fortify\Features;
@@ -71,6 +74,9 @@ Route::get('/client/{client}/clone', ClientCloneIndexController::class)->name('c
 Route::post('/client/clone/store', ClientCloneStoreController::class)->name('client.clone.store');
 // Route::multisteps();
 Route::patch('/client/update/personal/info/{client}/{field}', UpdateClientPersonalInfoController::class)->name('update.client.personal-info');
+Route::patch('/client/update/motor/info/{motor}/{field}', UpdateClientMotorInfoController::class)->name('update.client.motor-info');
+Route::patch('/client/update/referee/info/{referee}/{field}', UpdateClientRefereeInfoController::class)->name('update.client.referee-info');
+Route::patch('/client/update/loan/info/{referee}/{field}', UpdateClientLoanInfoController::class)->name('update.client.loan-info');
 
 
 require __DIR__ . '/fortify.php';

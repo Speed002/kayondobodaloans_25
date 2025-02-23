@@ -1,8 +1,9 @@
 <script setup>
 import { Disclosure, DisclosurePanel, DisclosureButton } from '@headlessui/vue';
 import { PencilSquareIcon } from '@heroicons/vue/24/outline';
+import { useForm } from '@inertiajs/vue3'
 
-defineProps({ referee: Object });
+const props = defineProps({ referee: Object });
 const fields = [
     { label: 'Referee One Name', key: 'referee_one_name' },
     { label: 'Referee One Contact', key: 'referee_one_contact' },
@@ -12,8 +13,21 @@ const fields = [
     { label: 'Referee Two Relationship', key: 'referee_two_relationship' },
     { label: 'Stage Chairperson Name', key: 'stage_chairperson_name' },
     { label: 'Stage Chairperson Contact', key: 'stage_chairperson_contact' },
-    { label: 'LC Chairperson Name', key: 'lc_chairperson_name' }
+    { label: 'LC Chairperson Name', key: 'lc_chairperson_name' },
+    { label: 'LC Chairperson Contact', key: 'lc_chairperson_contact' }
 ];
+
+const form = useForm(
+    Object.fromEntries(fields.map(field => [field.key, props.referee[0][field.key] ?? '']))
+);
+
+const updateInfo = (field) => {
+    // console.log(form)
+    form.patch(route('update.client.referee-info', [`${props.referee[0].id}`, `${field}`]), {
+        preserveScroll:true,
+    })
+}
+
 </script>
 
 <template>
@@ -28,10 +42,12 @@ const fields = [
                     </DisclosureButton>
                 </div>
                 <DisclosurePanel>
-                    <form class="space-y-2">
-                        <input type="text" class="flex-grow w-full text-gray-900 border-gray-300 text-sm rounded-sm" :value="referee[0][field.key]">
+                    <form v-on:submit.prevent="updateInfo(field.key)" class="space-y-2">
+                        <input type="text" class="flex-grow w-full text-gray-900 border-gray-300 text-sm rounded-sm"
+                        v-model="form[field.key]"
+                        >
                         <div class="flex items-center justify-end space-x-6 text-sm">
-                            <button class="text-sky-500 hover:text-gray-50">save</button>
+                            <button class="text-sky-500 hover:text-gray-50">Update</button>
                             <DisclosureButton class="text-rose-700 hover:text-gray-50">cancel</DisclosureButton>
                         </div>
                     </form>

@@ -19,11 +19,6 @@ const fields = [
     { key: 'mother_name', label: "Mother's name", type: 'text' },
     { key: 'mother_contact', label: "Mother's contact", type: 'text' }
 ];
-
-// const form = useForm({
-//     field: fields.map((field) => props.client[field.key])
-// })
-
 const form = useForm(
     Object.fromEntries(fields.map(field => [field.key, props.client[field.key] ?? '']))
 );
@@ -54,7 +49,7 @@ const updateInfo = (field) => {
                             v-model="form[field.key]"
                         >
                         <div class="flex items-center justify-end space-x-6 text-sm">
-                            <button class="text-sky-500 hover:text-gray-50">Save</button>
+                            <button class="text-sky-500 hover:text-gray-50">Update</button>
                             <DisclosureButton class="text-rose-700 hover:text-gray-50">Cancel</DisclosureButton>
                         </div>
                     </form>
