@@ -11,7 +11,7 @@ class ClientStoreRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return true;
+        return true; //you can call a policy here auth()->user()->can('policy_method', $this->$client) //if passed from the route model binding, if not passed: can('policy_method', Client::class)
     }
 
     /**

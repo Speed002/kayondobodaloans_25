@@ -12,7 +12,6 @@ use App\Http\Controllers\ClientCloneStoreController;
 use App\Http\Controllers\ClientCreateController;
 use App\Http\Controllers\ClientIndexController;
 use App\Http\Controllers\ClientShowController;
-use App\Http\Controllers\ClientSingleDocumentIndexController;
 use App\Http\Controllers\ClientStoreController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
