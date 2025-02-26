@@ -18,6 +18,6 @@ class ClientCloneIndexController extends Controller
         $client->load(['motor']); //Eager loading the relationships['motor'] and any other
         return inertia()->modal('Client/Clone', [
             'client' => ClientResource::make($client)
-        ])->baseRoute('clients');
+        ])->baseRoute('client.show', $client->id);
     }
 }

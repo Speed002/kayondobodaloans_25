@@ -36,4 +36,8 @@ class Client extends Model
         return $this->hasMany(Loan::class);
     }
 
+    public function files(){
+        return $this->hasMany(File::class);
+    }
+
 }

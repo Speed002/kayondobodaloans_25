@@ -20,6 +20,7 @@ defineProps({
     filtered_motor : Object,
     filtered_loan : Object,
     filtered_referee : Object,
+    files:Object
 })
 
 
@@ -48,7 +49,7 @@ defineProps({
                     <PDFDownloads/>
                 </div>
                 <div v-if="info === 6">
-                    <OtherFiles/>
+                    <OtherFiles :files="files" :client="client"/>
                 </div>
                 <div v-if="info === 1">
                     <PersonalInformation :client="client"/>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Resources\ClientResource;
 use App\Models\Client;
+use App\Models\File;
 use Illuminate\Http\Request;
 
 class ClientShowController extends Controller
@@ -12,11 +13,13 @@ class ClientShowController extends Controller
     {
         $this->middleware(['auth']);
     }
-    public function __invoke(Client $client, $key = null)
+    public function __invoke(Request $request, Client $client, $key = null)
     {
         if($key){
             $common_key = $key;
         }
+        // client files
+
         // Load relationships normally
         $client->load(['motor', 'loan', 'referee']);
         // Apply filtering only if key is provided
@@ -28,7 +31,8 @@ class ClientShowController extends Controller
             'filtered_motor' => $filteredMotor,
             'filtered_loan' => $filteredLoan,
             'filtered_referee' => $filteredReferee,
-            'common_key' => $common_key ?? ''
+            'common_key' => $common_key ?? '',
+            'files' => $client->files()->get()
         ]);
     }
 

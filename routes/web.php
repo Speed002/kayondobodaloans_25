@@ -1,29 +1,31 @@
 <?php
 
-use App\Http\Controllers\Account\AccountIndexController;
-use App\Http\Controllers\Account\SecurityIndexController;
+use Laravel\Fortify\Features;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\FileStoreController;
+use Symfony\Contracts\Service\ResetInterface;
+use App\Http\Controllers\ClientShowController;
+use App\Http\Controllers\ClientIndexController;
+use App\Http\Controllers\ClientStoreController;
+use Illuminate\Auth\Middleware\RequirePassword;
+use App\Http\Controllers\ClientCreateController;
+use App\Http\Controllers\MessageIndexController;
 use App\Http\Controllers\Auth\LoginIndexController;
-use App\Http\Controllers\Auth\RecoverIndexController;
-use App\Http\Controllers\Auth\RegisterIndexController;
 use App\Http\Controllers\Auth\ResetIndexController;
-use App\Http\Controllers\Auth\TwoFactorIndexController;
 use App\Http\Controllers\ClientCloneIndexController;
 use App\Http\Controllers\ClientCloneStoreController;
-use App\Http\Controllers\ClientCreateController;
-use App\Http\Controllers\ClientIndexController;
-use App\Http\Controllers\ClientShowController;
-use App\Http\Controllers\ClientStoreController;
-use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\MessageIndexController;
+use App\Http\Controllers\Auth\RecoverIndexController;
+use App\Http\Controllers\Auth\RegisterIndexController;
+use App\Http\Controllers\Auth\TwoFactorIndexController;
+use App\Http\Controllers\Account\AccountIndexController;
 use App\Http\Controllers\UpdateClientLoanInfoController;
+use App\Http\Controllers\Account\SecurityIndexController;
+use App\Http\Controllers\FileDownloadController;
 use App\Http\Controllers\UpdateClientMotorInfoController;
-use App\Http\Controllers\UpdateClientPersonalInfoController;
 use App\Http\Controllers\UpdateClientRefereeInfoController;
-use Illuminate\Auth\Middleware\RequirePassword;
-use Illuminate\Support\Facades\Route;
-use Laravel\Fortify\Features;
-use Symfony\Contracts\Service\ResetInterface;
+use App\Http\Controllers\UpdateClientPersonalInfoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -77,5 +79,7 @@ Route::patch('/client/update/motor/info/{motor}/{field}', UpdateClientMotorInfoC
 Route::patch('/client/update/referee/info/{referee}/{field}', UpdateClientRefereeInfoController::class)->name('update.client.referee-info');
 Route::patch('/client/update/loan/info/{referee}/{field}', UpdateClientLoanInfoController::class)->name('update.client.loan-info');
 
+Route::post('/files/store/{client}', FileStoreController::class)->name('files.store');
+Route::get('/files/download/{file}', FileDownloadController::class)->name('files.download');
 
 require __DIR__ . '/fortify.php';

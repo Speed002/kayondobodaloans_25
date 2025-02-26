@@ -50,7 +50,8 @@ class HandleInertiaRequests extends Middleware
             'toast' => session('toast'),
             'ziggy' => [
                 'route_name' => Route::currentRouteName()
-            ]
+            ],
+            'csrf_token' => csrf_token()
         ]);
     }
 }
