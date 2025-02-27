@@ -23,7 +23,7 @@ defineProps({
             {{ client.motor.length }}
             </span>
             <UserCircleIcon class="h-12 w-12"/>
-            <span class="md:text-sm sm:text-sm text-xs">{{ client.name }}</span>
+            <span class="md:text-sm sm:text-sm text-xs">{{ client.short_name }}</span>
             <span class="md:text-sm sm:text-sm text-xs">{{ client.motor[0].registration }}</span>
             <div class="flex items-center space-x-3">
                 <span class="bg-cyan-950 p-1 rounded-md text-xs">Luganda</span>

@@ -23,6 +23,7 @@ use App\Http\Controllers\Account\AccountIndexController;
 use App\Http\Controllers\UpdateClientLoanInfoController;
 use App\Http\Controllers\Account\SecurityIndexController;
 use App\Http\Controllers\FileDownloadController;
+use App\Http\Controllers\PDFDownloadController;
 use App\Http\Controllers\UpdateClientMotorInfoController;
 use App\Http\Controllers\UpdateClientRefereeInfoController;
 use App\Http\Controllers\UpdateClientPersonalInfoController;
@@ -81,5 +82,12 @@ Route::patch('/client/update/loan/info/{referee}/{field}', UpdateClientLoanInfoC
 
 Route::post('/files/store/{client}', FileStoreController::class)->name('files.store');
 Route::get('/files/download/{file}', FileDownloadController::class)->name('files.download');
+
+// Luganda
+// English
+Route::get('/generate-english-agreement/{motor}', [PDFDownloadController::class, 'generateEnglishPDF'])->name('english.document');
+Route::get('/generate-luganda-agreement/{motor}', [PDFDownloadController::class, 'generateLugandaPDF'])->name('luganda.document');
+Route::get('/generate-take-over-form/{motor}', [PDFDownloadController::class, 'generateTakeOverForm'])->name('take-over.document');
+Route::get('/generate-online-hirer-form/{motor}', [PDFDownloadController::class, 'generateOnlineHirerForm'])->name('online-hirer-form.document');
 
 require __DIR__ . '/fortify.php';

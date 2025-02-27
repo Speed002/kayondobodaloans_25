@@ -2,8 +2,11 @@
 
 namespace App\Http\Resources;
 
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Http\Resources\MotorResource;
+use App\Models\Client;
+use App\Models\User;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class ClientResource extends JsonResource
@@ -18,6 +21,7 @@ class ClientResource extends JsonResource
         return [
             'id' => $this->id,
             'name' => $this->name,
+            'short_name' => Str::limit($this->name, 10),
             'nin' => $this->nin,
             'dob' => $this->dob,
             'contact' => $this->contact,
@@ -30,6 +34,8 @@ class ClientResource extends JsonResource
             'mother_name' => $this->mother_name,
             'mother_contact' => $this->mother_contact,
             'motor' => MotorResource::collection($this->whenLoaded('motor')),
+            'datetime' => DateTimeResource::make($this->created_at),
+            'whoCreated' => $this->user
 
         ];
     }

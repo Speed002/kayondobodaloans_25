@@ -3,8 +3,13 @@ import { Head, Link } from '@inertiajs/vue3'
 import Default from '@/Layouts/Default.vue'
 import { PlusIcon,  } from '@heroicons/vue/24/outline';
 
-
 defineOptions({ layout: Default })
+
+defineProps({
+    clients:Object,
+    latest_client:Object
+})
+
 </script>
 
 <template>
@@ -32,9 +37,9 @@ defineOptions({ layout: Default })
                 </p>
             </div>
             <h3 class="text-sm">Analytics</h3>
-            <div class="flex items-center justify-between md:justify-start sm:justify-start space-x-3 rounded-md text-sm">
+            <div v-if="clients" class="flex items-center justify-between md:justify-start sm:justify-start space-x-3 rounded-md text-sm">
                 <Link :href="route('clients')" class="portal rounded-md flex items-center ">
-                    <span class="text-sky-500">12&nbsp;</span>
+                    <span class="text-sky-500">{{clients}}&nbsp;</span>
                     clients
                 </Link>
                 <Link :href="route('messages')" class="portal rounded-md flex items-center">
@@ -42,11 +47,13 @@ defineOptions({ layout: Default })
                     Messages
                 </Link>
             </div>
-            <div class="flex-grow portal-mini rounded-md space-y-1">
-                <span class="text-sm">Recently added client on <span class="bg-cyan-950 p-1 rounded-md">12/12/12</span> <span class="bg-cyan-950 p-1 rounded-md">2:12 PM</span>, added by {{ $page.props.auth.user.name }}</span>
-                <p class="text-sm text-gray-400">
-                    kasamba Mark Edward, CM98347632387. UBF 200H. Agreement date:[12/12/12], at Kireka >
-                </p>
+            <div v-if="latest_client" class="flex-grow portal-mini rounded-md space-y-1">
+                <div class="flex flex-col space-y-2">
+                    <span class="text-sm">Recently added client: <span class="bg-cyan-950 p-1 rounded-md">{{latest_client.datetime.human}}</span> at <span class="bg-cyan-950 p-1 rounded-md">{{latest_client.datetime.time}}</span>, added by <span class="bg-cyan-950 p-1 rounded-md">{{ latest_client.whoCreated.name }}</span></span>
+                    <Link :href="route('client.show', latest_client.id)" class="text-sm text-sky-500">
+                        <span class="text-gray-400">></span> {{latest_client.name}}, {{latest_client.nin}}
+                    </Link>
+                </div>
             </div>
         </div>
     </div>

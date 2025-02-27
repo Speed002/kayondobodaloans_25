@@ -14,7 +14,7 @@ const emit = defineEmits(['update:info']);
 <template>
     <Link :href="route('clients')" class="hidden md:flex md:items-center md:justify-start md:w-fit md:space-x-1 bg-nav-blue rounded-md p-1 shadow-lg hover:bg-transparent-dark">
         <ArrowLeftIcon class="w-3 h-3 text-sky-500 hover:bg-transparent-dark"/>
-        <span class="text-sm text-gray-400 tracking-tighter">Go back</span>
+        <span class="text-sm text-gray-400 tracking-tighter">See other clients</span>
     </Link>
     <div class="relative w-fit md:mb-6">
         <!-- Fake Background Copy -->
@@ -31,7 +31,7 @@ const emit = defineEmits(['update:info']);
             {{ client.motor.length }}
             </span>
             <UserCircleIcon class="md:h-12 md:w-12 sm:h-8 sm:w-8 h-6 w-6"/>
-            <span class="text-xs text-gray-300 md:text-sm sm:text-xs">{{ client.name }}</span>
+            <span class="text-xs text-gray-300 md:text-sm sm:text-xs">{{ client.short_name }}</span>
             <span class="hidden md:block sm:block text-gray-300 md:text-sm sm:text-xs">{{ motor[0].registration }}</span>
         </div>
     </div>
