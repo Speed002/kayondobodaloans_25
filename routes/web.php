@@ -22,6 +22,10 @@ use App\Http\Controllers\Auth\TwoFactorIndexController;
 use App\Http\Controllers\Account\AccountIndexController;
 use App\Http\Controllers\UpdateClientLoanInfoController;
 use App\Http\Controllers\Account\SecurityIndexController;
+use App\Http\Controllers\DeleteClientController;
+use App\Http\Controllers\DeleteClientDocumentController;
+use App\Http\Controllers\DeleteClientDocumentIndexController;
+use App\Http\Controllers\DeleteClientIndexController;
 use App\Http\Controllers\FileDownloadController;
 use App\Http\Controllers\PDFDownloadController;
 use App\Http\Controllers\UpdateClientMotorInfoController;
@@ -90,4 +94,8 @@ Route::get('/generate-luganda-agreement/{motor}', [PDFDownloadController::class,
 Route::get('/generate-take-over-form/{motor}', [PDFDownloadController::class, 'generateTakeOverForm'])->name('take-over.document');
 Route::get('/generate-online-hirer-form/{motor}', [PDFDownloadController::class, 'generateOnlineHirerForm'])->name('online-hirer-form.document');
 
+Route::get('/delete/motor/clone/{id}', DeleteClientDocumentIndexController::class)->name('delete.clone.index');
+Route::delete('/delete/motor/{id}', DeleteClientDocumentController::class)->name('delete.cloned.document');
+Route::get('/delete/client/{id}', DeleteClientIndexController::class)->name('delete.client.index');
+Route::delete('/delete/client/{id}', DeleteClientController::class)->name('delete.client');
 require __DIR__ . '/fortify.php';

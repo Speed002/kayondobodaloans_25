@@ -64,7 +64,7 @@ const emit = defineEmits(['update:info']);
         </div>
 
         <p class="text-sm text-rose-600 tracking-tighter">
-                Delete account
+            <Link :href="route('delete.client.index', client.id)">Delete {{client.name}}.</Link>
         </p>
     </div>
 </template>
