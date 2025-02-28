@@ -39,9 +39,9 @@ const logout = () => {
                             </Link>
                         </div>
                         <div class="hidden sm:flex sm:ml-6 space-x-8" v-if="!$page.props.auth.user">
-                            <Link :href="route('auth.register')" class="inline-flex items-center border-b-2 border-transparent text-sm font-medium text-gray-300" v-if="$page.props.features.registration">
+                            <!-- <Link :href="route('auth.register')" class="inline-flex items-center border-b-2 border-transparent text-sm font-medium text-gray-300" v-if="$page.props.features.registration">
                                 Create an account
-                            </Link>
+                            </Link> -->
                             <Link :href="route('auth.login')" class="inline-flex items-center border-b-2 border-transparent text-sm font-medium text-gray-300">
                                 Sign in
                             </Link>
@@ -103,9 +103,9 @@ const logout = () => {
                 </Link>
             </div>
             <div class="spacey-1 pb-3" v-if="!$page.props.auth.user">
-                <Link :href="route('auth.register')" class="link block py-2 px-8 font-medium text-gray-300" v-if="$page.props.features.registration">
+                <!-- <Link :href="route('auth.register')" class="link block py-2 px-8 font-medium text-gray-300" v-if="$page.props.features.registration">
                     Create an account
-                </Link>
+                </Link> -->
                 <Link :href="route('auth.login')" class="link block py-2 px-8 font-medium text-gray-300">
                     Sign in
                 </Link>

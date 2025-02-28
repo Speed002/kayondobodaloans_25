@@ -13,9 +13,6 @@ defineProps({
 <template>
     <div class="p-8 font-mono">
         <div v-if="clients" class="max-w-5xl mx-auto space-y-5">
-            <div>
-                <input type="text" id="name" class="flex-grow w-full text-gray-900 border-gray-300 text-sm rounded-md" placeholder="Search by name or motor registration">
-            </div>
             <div class="md:flex md:justify-start sm:justify-start rounded-md flex-wrap sm:gap-3 md:gap-3 gap-2 flex items-center justify-between gap-2 md:p-0 sm:p-2">
                 <ClientCard v-for="client in clients" v-bind:key="client.id" :client="client" />
             </div>
