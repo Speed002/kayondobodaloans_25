@@ -1,7 +1,7 @@
 <script setup>
 import { Link, router } from '@inertiajs/vue3'
 import { Disclosure, DisclosurePanel, DisclosureButton, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
-import { Bars3Icon, XMarkIcon, PlusIcon } from '@heroicons/vue/24/outline'
+import { Bars3Icon, XMarkIcon, PlusIcon, MagnifyingGlassIcon } from '@heroicons/vue/24/outline'
 
 const logout = () => {
     router.post(route('logout'))
@@ -14,9 +14,12 @@ const logout = () => {
             <div class="mx-auto max-w-5xl flex h-16 justify-between relative">
                 <div class="flex grow">
                     <div class="flex items-center sm:mr-6">
-                        <Link href="#" class="font-semibold text-md flex items-center space-x-0">
+                        <Link href="#" class="font-semibold text-md flex items-center space-x-1">
                             <img src="/images/logo.png" alt="Logo" width="30" />
-                            <span class="tracking-tighter font-mono">kayondobodaloans</span>
+                            <span class="tracking-tighter font-mono hidden md:block sm:block">kayondobodaloans</span>
+                            <!-- <Link :href="route('search.client')" class="md:hidden sm:hidden flex items-center font-mono font-normal text-gray-400 text-sm">
+                                <MagnifyingGlassIcon class="w-5 h-5"/> search...
+                            </Link> -->
                             <!-- {{ $page.props.config['app.name'] }} -->
                         </Link>
                     </div>
@@ -34,9 +37,9 @@ const logout = () => {
                             <Link :href="route('create.client')" class="inline-flex items-center border-b-2 border-transparent hover:border-gray-200 text-sm text-gray-300" :class="{ '!border-blue-500': $page.props.ziggy.route_name === 'create.client' }">
                                 Create
                             </Link>
-                            <Link :href="route('messages')" class="inline-flex items-center border-b-2 border-transparent hover:border-gray-200 text-sm text-gray-300" :class="{ '!border-blue-500': $page.props.ziggy.route_name === 'messages' }">
-                                Messages
-                            </Link>
+                            <!-- <Link :href="route('search.client')" class="inline-flex items-center border-b-2 border-transparent hover:border-gray-200 font-mono font-normal text-gray-400 text-sm hover:cursor-pointer" :class="{ '!border-blue-500': $page.props.ziggy.route_name === 'messages' }">
+                                <MagnifyingGlassIcon class="w-5 h-5"/> <span class="md:block sm:hidden">search ...</span>
+                            </Link> -->
                         </div>
                         <div class="hidden sm:flex sm:ml-6 space-x-8" v-if="!$page.props.auth.user">
                             <!-- <Link :href="route('auth.register')" class="inline-flex items-center border-b-2 border-transparent text-sm font-medium text-gray-300" v-if="$page.props.features.registration">

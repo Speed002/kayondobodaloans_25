@@ -1,17 +1,39 @@
 <script setup>
-import { Head } from '@inertiajs/vue3'
+import { Head, router  } from '@inertiajs/vue3'
 import Default from '@/Layouts/Default.vue'
 import ClientCard from './ClientCard.vue';
+import _debounce from 'lodash.debounce';
+import { ref, watch } from 'vue';
 
 defineOptions({ layout: Default })
 
-defineProps({
-    clients:Object
+const props = defineProps({
+    clients:Object,
+    query:Object
 })
+
+const searchQuery = ref(props.query.search ||'')
+const handleSearchInput = _debounce((query) => {
+    router.reload({
+        data:{
+            search: query
+        },
+        preserveScroll:true
+    })
+}, 500)
+
+watch(searchQuery, (query) => {
+    handleSearchInput(query)
+})
+
 </script>
 
 <template>
-    <div class="p-8 font-mono">
+    <div class="p-8 font-mono space-y-4">
+        <div class="max-w-5xl mx-auto">
+            <input type="search" id="search" class="w-full rounded-md text-sm" v-model="searchQuery" placeholder="Search clients...">
+        </div>
+
         <div v-if="clients" class="max-w-5xl mx-auto space-y-5">
             <div class="md:flex md:justify-start sm:justify-start rounded-md flex-wrap sm:gap-3 md:gap-3 gap-2 flex items-center justify-between gap-2 md:p-0 sm:p-2">
                 <ClientCard v-for="client in clients" v-bind:key="client.id" :client="client" />

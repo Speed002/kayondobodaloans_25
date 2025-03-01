@@ -28,6 +28,7 @@ use App\Http\Controllers\DeleteClientDocumentIndexController;
 use App\Http\Controllers\DeleteClientIndexController;
 use App\Http\Controllers\FileDownloadController;
 use App\Http\Controllers\PDFDownloadController;
+use App\Http\Controllers\SearchClientIndexController;
 use App\Http\Controllers\UpdateClientMotorInfoController;
 use App\Http\Controllers\UpdateClientRefereeInfoController;
 use App\Http\Controllers\UpdateClientPersonalInfoController;
@@ -98,4 +99,6 @@ Route::get('/delete/motor/clone/{id}', DeleteClientDocumentIndexController::clas
 Route::delete('/delete/motor/{id}', DeleteClientDocumentController::class)->name('delete.cloned.document');
 Route::get('/delete/client/{id}', DeleteClientIndexController::class)->name('delete.client.index');
 Route::delete('/delete/client/{id}', DeleteClientController::class)->name('delete.client');
+
+Route::get('search/client/index/{search?}', SearchClientIndexController::class)->name('search.client');
 require __DIR__ . '/fortify.php';

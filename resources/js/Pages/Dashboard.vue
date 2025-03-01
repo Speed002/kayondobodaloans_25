@@ -20,9 +20,6 @@ defineProps({
                 <div class="flex items-center justify-between">
                     <div>
                         Hello {{ $page.props.auth.user.name }}
-                        <p class="text-sm text-gray-400 hidden sm:block">
-                            You have <span class="text-sky-500">4</span> unread messages from the site.
-                        </p>
                     </div>
                     <Link :href="route('create.client')" class="bg-sky-700 p-2 text-sm tracking-tighter rounded-md flex items-center justify-between hover:bg-transparent-dark">
                         <PlusIcon class="w-4 h-4"/>
@@ -30,21 +27,11 @@ defineProps({
                     </Link>
                 </div>
             </div>
-            <div class="flex-grow portal-mini rounded-md space-y-1">
-                <span class="text-sm">Recently received message on <span class="bg-cyan-950 p-1 rounded-md">12/12/12</span> <span class="bg-cyan-950 p-1 rounded-md">2:12 PM</span> by {{ $page.props.auth.user.name }}</span>
-                <p class="text-sm text-gray-400">
-                    kasamba Mark Edward, CM98347632387. UBF 200H. Agreement date:[12/12/12], at Kireka >
-                </p>
-            </div>
             <h3 class="text-sm">Analytics</h3>
             <div v-if="clients" class="flex items-center justify-between md:justify-start sm:justify-start space-x-3 rounded-md text-sm">
                 <Link :href="route('clients')" class="portal rounded-md flex items-center ">
                     <span class="text-sky-500">{{clients}}&nbsp;</span>
                     clients
-                </Link>
-                <Link :href="route('messages')" class="portal rounded-md flex items-center">
-                    <span class="text-sky-500">12&nbsp;</span>
-                    Messages
                 </Link>
             </div>
             <div v-if="latest_client" class="flex-grow portal-mini rounded-md space-y-1">

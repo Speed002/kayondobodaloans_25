@@ -7,7 +7,8 @@ export default {
         extend: {
             colors: {
                 'nav-blue': '#254660',
-                'transparent-dark':'rgba(0, 0, 0, 0.3)'
+                'transparent-dark':'rgba(0, 0, 0, 0.3)',
+                'major-background':'linear-gradient(to top, #09203f 0%, #1f3d54 100%) !important'
               },
         },
     },

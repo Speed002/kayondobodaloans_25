@@ -12,9 +12,16 @@ class ClientIndexController extends Controller
     {
         $this->middleware(['auth']);
     }
-    public function __invoke(){
+    public function __invoke(Request $request){
+        if($request->query()){
+            // dd($request->search);
+            $clients = ClientResource::collection(Client::with(['motor', 'referee', 'loan'])->where('name', 'like', '%' . $request->search . '%')->get());
+        }else{
+            $clients = ClientResource::collection(Client::with(['motor', 'referee', 'loan'])->get());
+        }
         return inertia()->render('Client/Clients', [
-            'clients' => ClientResource::collection(Client::with(['motor', 'referee', 'loan'])->get())
+            'query' => (object) $request->query(),
+            'clients' => $clients
         ]);
     }
 }
