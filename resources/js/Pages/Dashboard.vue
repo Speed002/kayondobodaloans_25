@@ -2,16 +2,12 @@
 import { Head, Link } from '@inertiajs/vue3'
 import Default from '@/Layouts/Default.vue'
 import { PlusIcon,  } from '@heroicons/vue/24/outline';
-
 defineOptions({ layout: Default })
-
 defineProps({
     clients:Object,
     latest_client:Object
 })
-
 </script>
-
 <template>
     <div class="p-8 font-mono">
         <div class="max-w-5xl mx-auto space-y-5">
@@ -44,16 +40,13 @@ defineProps({
             </div>
         </div>
     </div>
-
     <Head title="Dashboard" />
 </template>
-
 <style scoped>
 .portal{
     background-color: #254660!important;
     padding:18px;
 }
-
 .portal-mini{
     background-color: rgba(0, 0, 0, 0.3) !important;
     padding:18px;

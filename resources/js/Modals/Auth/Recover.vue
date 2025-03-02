@@ -2,18 +2,14 @@
 import Modal from '@/Components/Modal.vue'
 import { useForm, Head } from '@inertiajs/vue3'
 import { useModal } from 'momentum-modal'
-
 const { close } = useModal()
-
 const form = useForm({
     email: null
 })
 </script>
-
 <template>
     <Modal class="bg-nav-blue max-w-md p-12">
         <h2 class="text-center text-2xl font-bold font-mono text-gray-300">Recover your account</h2>
-
         <form class="mt-6 space-y-6" v-on:submit.prevent="form.post(route('password.email'), { onSuccess: () => close() })">
             <div>
                 <label for="email" class="text-sm font-medium text-gray-300">Email</label>
@@ -24,7 +20,6 @@ const form = useForm({
                     </div>
                 </div>
             </div>
-
             <div>
                 <button type="submit" class="flex w-full justify-center bg-sky-500 px-3 py-2 text-sm font-semibold text-white disabled:opacity-50" :disabled="form.processing">
                     Continue
@@ -32,6 +27,5 @@ const form = useForm({
             </div>
         </form>
     </Modal>
-
     <Head title="Recover your account" />
 </template>

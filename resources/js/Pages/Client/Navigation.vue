@@ -1,16 +1,13 @@
 <script setup>
 import { UserCircleIcon, BanknotesIcon, UsersIcon, TruckIcon, DocumentArrowDownIcon, DocumentDuplicateIcon,InformationCircleIcon, ArrowLeftIcon } from '@heroicons/vue/24/outline';
 import { Link } from '@inertiajs/vue3';
-
 defineProps({
     info: Number,
     client:Object,
     motor:Object
 });
-
 const emit = defineEmits(['update:info']);
 </script>
-
 <template>
     <Link :href="route('clients')" class="hidden md:flex md:items-center md:justify-start md:w-fit md:space-x-1 bg-nav-blue rounded-md p-1 shadow-lg hover:bg-transparent-dark">
         <ArrowLeftIcon class="w-3 h-3 text-sky-500 hover:bg-transparent-dark"/>

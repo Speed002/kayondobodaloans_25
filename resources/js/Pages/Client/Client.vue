@@ -10,10 +10,8 @@ import RefereeInformation from './Information/RefereeInformation.vue';
 import LoanInformation from './Information/LoanInformation.vue';
 import PDFDownloads from './Information/PDFDownloads.vue';
 import OtherFiles from './Information/OtherFiles.vue';
-
 const info = ref(2)
 defineOptions({ layout: Default })
-
 defineProps({
     client:Object,
     common_key:String,
@@ -22,10 +20,7 @@ defineProps({
     filtered_referee : Object,
     files:Object
 })
-
-
 </script>
-
 <template>
     <div class="p-8 font-mono">
         <div class="max-w-5xl mx-auto md:grid grid-cols-7 gap-6 md:space-y-0 space-y-3 ">
@@ -57,6 +52,5 @@ defineProps({
             </div>
         </div>
     </div>
-
     <Head :title="client.name" />
 </template>

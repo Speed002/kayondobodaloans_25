@@ -1,7 +1,6 @@
 <script setup>
 import Modal from '@/Components/Modal.vue'
 import { useForm, Head } from '@inertiajs/vue3'
-
 const form = useForm({
     name: '',
     email: '',
@@ -9,7 +8,6 @@ const form = useForm({
     password_confirmation: ''
 })
 </script>
-
 <template>
     <Modal class="bg-nav-blue max-w-md p-12">
         <h2 class="text-center text-2xl font-bold font-mono text-gray-300">Create an account</h2>
@@ -50,7 +48,6 @@ const form = useForm({
                     </div>
                 </div>
             </div>
-
             <div>
                 <button type="submit" class="flex w-full justify-center bg-sky-500 px-3 py-2 text-sm font-semibold text-white disabled:opacity-50" :disabled="form.processing">
                     Create account
@@ -58,6 +55,5 @@ const form = useForm({
             </div>
         </form>
     </Modal>
-
     <Head title="Create an account" />
 </template>

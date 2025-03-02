@@ -1,16 +1,13 @@
 <script setup>
 import { Head, useForm, Link, router } from '@inertiajs/vue3';
 import Modal from '@/Components/Modal.vue';
-
 const props = defineProps({
     motor:Object
 })
-
 const deleteDocument = () => {
     router.delete(route('delete.cloned.document', `${props.motor.id}`))
 }
 </script>
-
 <template>
     <Modal class="bg-nav-blue max-w-md p-12 font-mono space-y-2">
         <h2 class="text-center text-lg font-bold text-gray-300">You're about to delete</h2>

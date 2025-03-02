@@ -4,13 +4,11 @@ import Default from '@/Layouts/Default.vue'
 import ClientCard from './ClientCard.vue';
 import _debounce from 'lodash.debounce';
 import { ref, watch } from 'vue';
-
 defineOptions({ layout: Default })
 const props = defineProps({
     clients:Object,
     query:Object
 })
-
 const searchQuery = ref(props.query.search ||'')
 const handleSearchInput = _debounce((query) => {
     router.reload({
@@ -20,7 +18,6 @@ const handleSearchInput = _debounce((query) => {
         preserveScroll:true
     })
 }, 500)
-
 watch(searchQuery, (query) => {
     handleSearchInput(query)
 })

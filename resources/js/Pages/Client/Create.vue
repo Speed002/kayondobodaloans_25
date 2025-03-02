@@ -8,7 +8,6 @@ import MotorInfoForm from './Create/Forms/MotorInfoForm.vue';
 import RefereeInfoForm from './Create/Forms/RefereeInfoForm.vue';
 import LoanInfoForm from './Create/Forms/LoanInfoForm.vue';
 import ReviewForm from './Create/Forms/ReviewForm.vue';
-
 const {step, prevStep, nextStep} = useStep()
 defineOptions({ layout: Default })
 const form = useForm({
@@ -93,7 +92,6 @@ const createClient = () => {
                     <div v-if="step === 5" class="space-y-2">
                         <ReviewForm :form="form"/>
                     </div>
-
                     <div class="flex justify-between">
                         <button class="text-sky-500 p-1 rounded-md text-sm" v-if="step !== 1" type="button" @click="prevStep" :disabled="step === 1">Previous</button>
                         <button class="text-sky-500 p-1 rounded-md text-sm" v-if="step !== 5" type="button" @click="nextStep" :disabled="step === 5">Next</button>

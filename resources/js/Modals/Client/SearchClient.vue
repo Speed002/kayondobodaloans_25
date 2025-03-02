@@ -5,14 +5,11 @@ import { useModal } from 'momentum-modal';
 import _debounce from 'lodash.debounce';
 import { ref, watch } from 'vue';
 import ClientCard from '../../Pages/Client/ClientCard.vue';
-
 const { close, redirect } = useModal()
-
 const props = defineProps({
     clients:Object,
     query:Object
 })
-
 const searchQuery = ref(props.query.search ||'')
 const handleSearchInput = _debounce((query) => {
     router.reload({
@@ -24,12 +21,10 @@ const handleSearchInput = _debounce((query) => {
         preserveScroll: true, // Keeps scroll position
     })
 }, 500)
-
 watch(searchQuery, (query) => {
     handleSearchInput(query)
 })
 </script>
-
 <template>
 <Modal class="fixed inset-0 bg-nav-blue w-full h-full font-mono">
     <div class="flex items-center justify-between p-4 gap-4">
@@ -47,6 +42,5 @@ watch(searchQuery, (query) => {
         No names matched!
     </div>
 </Modal>
-
 <Head title="Search item"/>
 </template>

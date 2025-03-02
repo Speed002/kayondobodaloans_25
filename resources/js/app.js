@@ -6,10 +6,7 @@ import { ZiggyVue } from '../../vendor/tightenco/ziggy/dist/vue.es'
 import { modal } from 'momentum-modal'
 import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers'
 import toast from './plugins/toast';
-
-
 const appName = import.meta.env.VITE_APP_NAME
-
 createInertiaApp({
     title: (title) => `${title} - ${appName}`,
     resolve: name => {

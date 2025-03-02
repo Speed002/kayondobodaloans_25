@@ -1,14 +1,12 @@
 <script setup>
 import Modal from '@/Components/Modal.vue'
 import { useForm, Head, Link } from '@inertiajs/vue3'
-
 const form = useForm({
     email: '',
     password: '',
     remember: false,
 })
 </script>
-
 <template>
     <Modal class="bg-nav-blue max-w-md p-12">
         <h2 class="text-center text-2xl font-bold font-mono text-gray-300">Sign in</h2>
@@ -31,7 +29,6 @@ const form = useForm({
                     </div>
                 </div>
             </div>
-
             <div class="flex items-center justify-between">
                 <div class="flex items-center">
                     <input type="checkbox" id="remember" class="h-4 w-4 text-sky-500 focus:ring-blue-500" v-model="form.remember">
@@ -41,7 +38,6 @@ const form = useForm({
                     <Link :href="route('auth.recover')" class="text-sm text-sky-500 font-semibold">Forgot password</Link>
                 </div>
             </div>
-
             <div>
                 <button type="submit" class="flex w-full justify-center bg-sky-500 px-3 py-2 text-sm font-semibold text-white disabled:opacity-50" :disabled="form.processing">
                     Sign in
@@ -49,6 +45,5 @@ const form = useForm({
             </div>
         </form>
     </Modal>
-
     <Head title="Sign in" />
 </template>

@@ -1,12 +1,10 @@
 <script setup>
 import { UserCircleIcon, DocumentDuplicateIcon } from '@heroicons/vue/24/outline';
 import { Link } from '@inertiajs/vue3';
-
 defineProps({
     client:Object
 })
 </script>
-
 <template>
     <Link :href="route('client.show', `${client.id}`)" class="relative w-fit">
         <!-- Fake Background Copy -->

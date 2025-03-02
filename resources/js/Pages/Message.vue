@@ -1,12 +1,10 @@
 <script setup>
 import { Head } from '@inertiajs/vue3'
 import Default from '@/Layouts/Default.vue'
-import { UserCircleIcon, BanknotesIcon, UsersIcon, TruckIcon, DocumentArrowDownIcon, PencilSquareIcon, DocumentDuplicateIcon, DocumentCheckIcon, DocumentIcon, FilmIcon, ArrowDownLeftIcon, DocumentTextIcon, FaceSmileIcon, InformationCircleIcon, EnvelopeIcon } from '@heroicons/vue/24/outline';
+import { PencilSquareIcon, EnvelopeIcon } from '@heroicons/vue/24/outline';
 import { Disclosure, DisclosurePanel, DisclosureButton } from '@headlessui/vue'
-
 defineOptions({ layout: Default })
 </script>
-
 <template>
     <div class="p-8 font-mono">
         <div class="max-w-5xl mx-auto md:grid grid-cols-7 gap-6 md:space-y-0 space-y-3">
@@ -41,6 +39,5 @@ defineOptions({ layout: Default })
             </div>
         </div>
     </div>
-
     <Head title="Messages" />
 </template>

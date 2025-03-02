@@ -3,9 +3,7 @@ import Modal from '@/Components/Modal.vue'
 import { useForm, Head, router } from '@inertiajs/vue3'
 import { onMounted, ref } from 'vue'
 import axios from 'axios'
-
 const qrCode = ref('')
-
 onMounted(() => {
     axios.get(route('two-factor.qr-code')).then((response) => {
         qrCode.value = response.data.svg
@@ -15,11 +13,9 @@ onMounted(() => {
         }
     })
 })
-
 const form = useForm({
     code: null
 })
-
 const submit = () => {
     form.post(route('two-factor.confirm'), {
         onSuccess: () => {
@@ -27,18 +23,13 @@ const submit = () => {
         }
     })
 }
-
 </script>
-
 <template>
     <Modal class="bg-nav-blue max-w-md p-12">
         <h2 class="text-center text-2xl font-bold font-mono text-gray-300">Set up two factor authentication</h2>
-
         <form class="mt-6 space-y-6" v-on:submit.prevent="submit">
             <p class="text-sm">To set up two factor authentication, scan the QR code with your authenticator application and enter the code below.</p>
-
             <div v-html="qrCode" class="w-1/2 mx-auto"></div>
-
             <div>
                 <label for="code" class="text-sm font-medium text-gray-300">Code</label>
                 <div class="mt-2">
@@ -48,7 +39,6 @@ const submit = () => {
                     </div>
                 </div>
             </div>
-
             <div>
                 <button type="submit" class="flex w-full justify-center bg-sky-500 px-3 py-2 text-sm font-semibold text-white disabled:opacity-50" :disabled="form.processing">
                     Continue
@@ -56,6 +46,5 @@ const submit = () => {
             </div>
         </form>
     </Modal>
-
     <Head title="Enable two factor authentication" />
 </template>
