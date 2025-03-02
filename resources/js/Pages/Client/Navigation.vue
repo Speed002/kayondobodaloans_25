@@ -62,7 +62,6 @@ const emit = defineEmits(['update:info']);
                 <span class="sm:hidden md:block hidden">Personal info</span>
             </button>
         </div>
-
         <p class="text-sm text-rose-600 tracking-tighter">
             <Link :href="route('delete.client.index', client.id)">Delete {{client.name}}.</Link>
         </p>

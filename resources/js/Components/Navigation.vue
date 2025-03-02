@@ -16,7 +16,7 @@ const logout = () => {
                     <div class="flex items-center sm:mr-6">
                         <Link href="#" class="font-semibold text-md flex items-center space-x-1">
                             <img src="/images/logo.png" alt="Logo" width="30" />
-                            <span class="tracking-tighter font-mono hidden md:block sm:block">kayondobodaloans</span>
+                            <span class="tracking-tighter font-mono md:block sm:block">kayondobodaloans</span>
                             <!-- <Link :href="route('search.client')" class="md:hidden sm:hidden flex items-center font-mono font-normal text-gray-400 text-sm">
                                 <MagnifyingGlassIcon class="w-5 h-5"/> search...
                             </Link> -->

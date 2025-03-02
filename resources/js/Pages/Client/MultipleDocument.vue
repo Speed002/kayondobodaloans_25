@@ -22,10 +22,8 @@ defineProps({
 #clone{
     visibility:hidden;
 }
-
 .portal:hover > #clone{
     visibility:visible;
     transition:0.1s ease-in;
 }
-
 </style>

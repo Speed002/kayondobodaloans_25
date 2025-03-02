@@ -11,7 +11,6 @@ import ReviewForm from './Create/Forms/ReviewForm.vue';
 
 const {step, prevStep, nextStep} = useStep()
 defineOptions({ layout: Default })
-
 const form = useForm({
     name: '',
     nin: '',
@@ -64,7 +63,6 @@ const createClient = () => {
     })
 }
 </script>
-
 <template>
     <div class="p-8 font-mono">
         <div class="max-w-5xl mx-auto md:grid grid-cols-7 gap-6">
@@ -73,7 +71,6 @@ const createClient = () => {
                 <Navigation :step="step" @update:step="step = $event"/>
             </div>
             <div class="col-span-5">
-
                 <p class="md:my-0 my-3">Step {{ step }} of 5</p>
                 <!-- {{ form }} -->
                 <form @submit.prevent="createClient" class="space-y-3">
