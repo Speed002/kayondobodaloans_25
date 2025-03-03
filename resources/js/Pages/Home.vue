@@ -7,7 +7,6 @@ defineOptions({ layout: Default })
 <template>
     <div class="p-8 font-mono">
         <div class="max-w-5xl mx-auto space-y-5">
-            <h3 class="text-sm">Welcome back Admin: Please sign in to proceed</h3>
             <div class="flex-grow portal rounded-md">
                 <div class="flex items-center justify-between">
                     <div>
