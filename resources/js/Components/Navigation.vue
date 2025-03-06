@@ -96,9 +96,9 @@ const logout = () => {
                 <Link :href="route('dashboard')" class="link block py-2 px-8 font-medium text-gray-300 border-l-2 border-transparent" :class="{ 'border-blue-500': $page.props.ziggy.route_name === 'dashboard' }">
                     Dashboard
                 </Link>
-                <Link :href="route('messages')" class="link block py-2 px-8 font-medium text-gray-300 border-l-2 border-transparent" :class="{ 'border-blue-500': $page.props.ziggy.route_name === 'messages' }">
+                <!-- <Link :href="route('messages')" class="link block py-2 px-8 font-medium text-gray-300 border-l-2 border-transparent" :class="{ 'border-blue-500': $page.props.ziggy.route_name === 'messages' }">
                     Messages
-                </Link>
+                </Link> -->
                 <Link :href="route('clients')" class="link block py-2 px-8 font-medium text-gray-300 border-l-2 border-transparent" :class="{ 'border-blue-500': $page.props.ziggy.route_name === 'clients' }">
                     Clients
                 </Link>

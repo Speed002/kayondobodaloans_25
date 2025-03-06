@@ -22,7 +22,7 @@ defineProps({
             </span>
             <UserCircleIcon class="h-12 w-12"/>
             <span class="md:text-sm sm:text-sm text-xs">{{ client.short_name }}</span>
-            <span class="md:text-sm sm:text-sm text-xs">{{ client.motor[0].registration }}</span>
+            <span class="md:text-sm sm:text-sm text-xs">{{ client.motor[0].registration ? client.motor[0].registration : '[no-plate]'  }}</span>
             <div class="flex items-center space-x-3">
                 <a :href="route('luganda.document', client.motor[0].id)" @click.stop class="bg-cyan-950 p-1 rounded-md text-xs">Luganda</a>
                 <a :href="route('english.document', client.motor[0].id)" @click.stop class="bg-cyan-950 p-1 rounded-md text-xs">English</a>

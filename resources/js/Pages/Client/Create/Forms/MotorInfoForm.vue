@@ -67,7 +67,7 @@ defineProps({
         </div>
         <div>
             <label for="condition">Condition</label>
-            <select v-model="form.condition" class="w-full bg-transparent-dark text-gray-300 text-sm rounded-md">
+            <select v-model="form.condition" class="w-full bg-transparent-dark text-gray-300 text-sm rounded-md p-2">
                 <option value="" class="bg-transparent-dark">Select Condition</option>
                 <option value="New" class="bg-transparent-dark">New</option>
                 <option value="Old" class="bg-transparent-dark">Old</option>
