@@ -5,7 +5,7 @@ import { PlusIcon,  } from '@heroicons/vue/24/outline';
 defineOptions({ layout: Default })
 </script>
 <template>
-    <div class="p-8 font-mono">
+    <div class="p-8 font-sans">
         <div class="max-w-5xl mx-auto space-y-5">
             <div class="flex-grow portal rounded-md">
                 <div class="flex items-center justify-between">

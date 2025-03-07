@@ -10,7 +10,7 @@ const form = useForm({
 </script>
 <template>
     <Modal class="bg-nav-blue max-w-md p-12">
-        <h2 class="text-center text-2xl font-bold font-mono text-gray-300">Create an account</h2>
+        <h2 class="text-center text-2xl font-bold text-gray-300">Create an account</h2>
         <form class="mt-6 space-y-6" v-on:submit.prevent="form.post(`/register`)">
             <div>
                 <label for="name" class="text-sm font-medium text-gray-300">Name</label>

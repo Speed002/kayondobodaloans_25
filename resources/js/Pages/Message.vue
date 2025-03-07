@@ -6,7 +6,7 @@ import { Disclosure, DisclosurePanel, DisclosureButton } from '@headlessui/vue'
 defineOptions({ layout: Default })
 </script>
 <template>
-    <div class="p-8 font-mono">
+    <div class="p-8 font-sans">
         <div class="max-w-5xl mx-auto md:grid grid-cols-7 gap-6 md:space-y-0 space-y-3">
             <div class="col-span-2 space-y-3 md:block sm:flex">
                 <div class="space-y-3">

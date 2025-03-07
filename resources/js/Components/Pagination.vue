@@ -1,5 +1,5 @@
 <template>
-    <nav class="relative flex justify-center">
+    <nav class="relative flex justify-center font-sans">
         <Link v-for="link in pagination.links"
         :key="link.label"
         :href="link.url ?? ''"

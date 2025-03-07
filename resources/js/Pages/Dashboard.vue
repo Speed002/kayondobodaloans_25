@@ -9,7 +9,7 @@ defineProps({
 })
 </script>
 <template>
-    <div class="p-8 font-mono">
+    <div class="p-8 font-sans">
         <div class="max-w-5xl mx-auto space-y-5">
             <h3 class="text-sm">Dashboard</h3>
             <div class="flex-grow portal rounded-md">

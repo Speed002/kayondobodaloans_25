@@ -9,7 +9,7 @@ const deleteDocument = () => {
 }
 </script>
 <template>
-    <Modal class="bg-nav-blue max-w-md p-12 font-mono space-y-2">
+    <Modal class="bg-nav-blue max-w-md p-12 space-y-2">
         <h2 class="text-center text-lg font-bold text-gray-300">You're about to delete</h2>
         <p class="text-center text-sm font-semibold text-gray-300">{{motor.type}} | {{motor.make}} | {{motor.registration}}</p>
         <p class="text-center text-sm">Please confirm your choice!</p>

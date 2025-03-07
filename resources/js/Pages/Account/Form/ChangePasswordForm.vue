@@ -16,7 +16,7 @@ const submit = () => {
 </script>
 <template>
     <div>
-        <h2 class="font-bold text-gray-300 font-mono">Change password</h2>
+        <h2 class="font-bold text-gray-300">Change password</h2>
         <form class="mt-10 space-y-6" v-on:submit.prevent="submit">
             <div>
                 <label for="current_password" class="text-sm font-medium text-gray-300">Current password</label>

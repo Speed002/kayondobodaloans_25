@@ -9,7 +9,7 @@ const form = useForm({
 </script>
 <template>
     <Modal class="bg-nav-blue max-w-md p-12">
-        <h2 class="text-center text-2xl font-bold font-mono text-gray-300">Confirm password</h2>
+        <h2 class="text-center text-2xl font-bold text-gray-300">Confirm password</h2>
         <form class="mt-6 space-y-6" v-on:submit.prevent="form.post(route('password.confirm'), { onSuccess: () => close() })">
             <div>
                 <label for="password" class="text-sm font-medium text-gray-300">Password</label>

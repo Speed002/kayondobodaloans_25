@@ -11,21 +11,21 @@ const logout = () => {
 
 <template>
     <Disclosure as="nav" v-slot="{ open }">
-        <div id="navbar" class="mx-auto max-w-7xl px-8">
+        <div id="navbar" class="mx-auto max-w-7xl px-8 font-sans">
             <div class="mx-auto max-w-5xl flex h-16 justify-between relative">
                 <div class="flex grow">
                     <div class="flex items-center sm:mr-6">
                         <Link href="#" class="font-semibold text-md flex items-center space-x-1">
                             <img :src="'/images/logo.png'" alt="Logo" width="30" />
-                            <span class="tracking-tighter font-mono md:block sm:block">kayondobodaloans</span>
-                            <!-- <Link :href="route('search.client')" class="md:hidden sm:hidden flex items-center font-mono font-normal text-gray-400 text-sm">
+                            <span class="tracking-tighter md:block sm:block">kayondobodaloans</span>
+                            <!-- <Link :href="route('search.client')" class="md:hidden sm:hidden flex items-center font-normal text-gray-400 text-sm">
                                 <MagnifyingGlassIcon class="w-5 h-5"/> search...
                             </Link> -->
                             <!-- {{ $page.props.config['app.name'] }} -->
                         </Link>
                     </div>
                     <div class="flex justify-between w-full">
-                        <div class="hidden sm:flex sm:ml-6 space-x-8 font-mono">
+                        <div class="hidden sm:flex sm:ml-6 space-x-8">
                             <!-- <Link :href="route('home')" class="inline-flex items-center border-b-2 border-transparent hover:border-gray-200 text-sm text-gray-300" :class="{ '!border-blue-500': $page.props.ziggy.route_name === 'home' }">
                                 Home
                             </Link> -->
@@ -38,7 +38,7 @@ const logout = () => {
                             <Link :href="route('create.client')" class="inline-flex items-center border-b-2 border-transparent hover:border-gray-200 text-sm text-gray-300" :class="{ '!border-blue-500': $page.props.ziggy.route_name === 'create.client' }">
                                 Create
                             </Link>
-                            <!-- <Link :href="route('search.client')" class="inline-flex items-center border-b-2 border-transparent hover:border-gray-200 font-mono font-normal text-gray-400 text-sm hover:cursor-pointer" :class="{ '!border-blue-500': $page.props.ziggy.route_name === 'messages' }">
+                            <!-- <Link :href="route('search.client')" class="inline-flex items-center border-b-2 border-transparent hover:border-gray-200  font-normal text-gray-400 text-sm hover:cursor-pointer" :class="{ '!border-blue-500': $page.props.ziggy.route_name === 'messages' }">
                                 <MagnifyingGlassIcon class="w-5 h-5"/> <span class="md:block sm:hidden">search ...</span>
                             </Link> -->
                         </div>
@@ -89,7 +89,7 @@ const logout = () => {
         </div>
 
         <DisclosurePanel class="sm:hidden">
-            <div class="spacey-1 pb-3 font-mono text-sm">
+            <div class="spacey-1 pb-3 text-sm">
                 <!-- <Link :href="route('home')" class="link block py-2 px-8 font-medium text-gray-300 border-l-2 border-transparent" :class="{ 'border-blue-500': $page.props.ziggy.route_name === 'home' }">
                     Home
                 </Link> -->

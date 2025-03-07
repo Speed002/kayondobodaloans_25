@@ -15,7 +15,7 @@ const cloneClient = () => {
 }
 </script>
 <template>
-    <Modal class="bg-nav-blue max-w-md p-12 font-mono">
+    <Modal class="bg-nav-blue max-w-md p-12">
         <h2 class="text-center text-lg font-bold text-gray-300">You're about to clone</h2>
         <p class="text-center text-sm font-semibold text-gray-300">{{ client.name }} | {{ client.motor[0].registration }}</p>
         <form class="mt-6 space-y-6" v-on:submit.prevent="cloneClient">

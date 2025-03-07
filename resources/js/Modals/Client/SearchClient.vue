@@ -26,7 +26,7 @@ watch(searchQuery, (query) => {
 })
 </script>
 <template>
-<Modal class="fixed inset-0 bg-nav-blue w-full h-full font-mono">
+<Modal class="fixed inset-0 bg-nav-blue w-full h-full">
     <div class="flex items-center justify-between p-4 gap-4">
         <div class="flex-grow">
             <input type="search" name="search" v-model="searchQuery" class="rounded-md w-full" placeholder="Search client ...">

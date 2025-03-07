@@ -21,7 +21,7 @@ const { show, close, redirect } = useModal()
                 <div class="bg-slate-800/75 fixed inset-0"></div>
             </TransitionChild>
 
-            <div class="fixed inset-0 overflow-y-auto transition-opacity">
+            <div class="fixed inset-0 overflow-y-auto transition-opacity font-sans">
                 <div class="flex min-h-full items-center justify-center text-center">
                     <TransitionChild
                         as="template"

@@ -63,7 +63,7 @@ const createClient = () => {
 }
 </script>
 <template>
-    <div class="p-8 font-mono">
+    <div class="p-8">
         <div class="max-w-5xl mx-auto md:grid grid-cols-7 gap-6">
             <div class="col-span-2 space-y-3 md:block sm:flex">
                 <!-- Emitting the step event -->

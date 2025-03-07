@@ -24,7 +24,7 @@ watch(searchQuery, (query) => {
 })
 </script>
 <template>
-    <div class="p-8 font-mono space-y-6">
+    <div class="p-8 space-y-6">
         <div class="max-w-5xl mx-auto">
             <input type="search" id="search" class="w-full rounded-md text-sm" v-model="searchQuery" placeholder="Search clients...">
         </div>

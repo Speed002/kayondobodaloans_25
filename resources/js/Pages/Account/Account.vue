@@ -29,7 +29,7 @@ const photoPreview = computed(() => {
 </script>
 <template>
     <div>
-        <h2 class="font-bold text-gray-300 font-mono">Profile information</h2>
+        <h2 class="font-bold text-gray-300">Profile information</h2>
         <form class="mt-10 space-y-6" v-on:submit.prevent="submit">
             <div>
                 <label for="email" class="text-sm font-medium text-gray-300">Email</label>
