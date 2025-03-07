@@ -21,15 +21,15 @@ const emit = defineEmits(['update:info']);
         </div>
         <!-- Main Card -->
         <div class="portal relative rounded-md flex flex-col items-center space-y-1 bg-nav-blue p-4 shadow-lg">
-            <Link :href="route('client.clone', `${client.id}`)" id="clone" class="absolute top-1 right-1 bg-cyan-950 text-white md:text-sm text-xs hover:cursor-pointer hover:bg-sky-800 p-1 rounded-md">
+            <Link :href="route('client.clone', `${client.id}`)" id="clone" class="absolute top-1 right-1 bg-cyan-950 text-white md:text-xs text-xs hover:cursor-pointer hover:bg-sky-800 p-1 rounded-md">
                 <DocumentDuplicateIcon class="h-4 w-4"/>
             </Link>
-            <span v-if="client.motor.length > 1" id="clone" class="absolute top-7 right-1 bg-cyan-950 text-white md:text-sm text-xs px-2 rounded-md">
+            <span v-if="client.motor.length > 1" id="clone" class="absolute top-7 right-1 bg-cyan-950 text-white md:text-xs text-xs px-2 rounded-md">
             {{ client.motor.length }}
             </span>
             <UserCircleIcon class="md:h-12 md:w-12 sm:h-8 sm:w-8 h-6 w-6"/>
-            <span class="text-xs text-gray-300 md:text-sm sm:text-xs">{{ client.short_name }}</span>
-            <span class="hidden md:block sm:block text-gray-300 md:text-sm sm:text-xs">{{ motor[0].registration }}</span>
+            <span class="text-xs text-gray-300 md:text-xs sm:text-xs">{{ client.short_name }}</span>
+            <span class="hidden md:block sm:block text-gray-300 md:text-xs sm:text-xs">{{ motor[0].registration }}</span>
         </div>
     </div>
     <div class="md:space-y-6 sm:space-y-3 space-y-2">

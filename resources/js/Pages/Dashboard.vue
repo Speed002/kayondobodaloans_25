@@ -14,10 +14,10 @@ defineProps({
             <h3 class="text-sm">Dashboard</h3>
             <div class="flex-grow portal rounded-md">
                 <div class="flex items-center justify-between">
-                    <div>
+                    <div class="text-sm">
                         Hello {{ $page.props.auth.user.name }}
                     </div>
-                    <Link :href="route('create.client')" class="bg-sky-700 p-2 text-sm tracking-tighter rounded-md flex items-center justify-between hover:bg-transparent-dark">
+                    <Link :href="route('create.client')" class="bg-sky-700 p-2 text-xs tracking-tighter rounded-md flex items-center justify-between hover:bg-transparent-dark">
                         <PlusIcon class="w-4 h-4"/>
                         &nbsp;Add client
                     </Link>
@@ -33,7 +33,7 @@ defineProps({
             <div v-if="latest_client" class="flex-grow portal-mini rounded-md space-y-1">
                 <div class="flex flex-col space-y-2">
                     <span class="text-sm">Recently added client:</span>
-                    <Link :href="route('client.show', latest_client.id)" class="text-sm text-sky-500">
+                    <Link :href="route('client.show', latest_client.id)" class="text-xs text-sky-500">
                         <span class="text-gray-400">></span> {{latest_client.name}}, {{latest_client.nin}}
                     </Link>
                 </div>
