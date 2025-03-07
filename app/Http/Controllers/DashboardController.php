@@ -17,7 +17,7 @@ class DashboardController extends Controller
     {
         return inertia()->render('Dashboard', [
             'clients' => Client::all()->count(),
-            'latest_client' => ClientResource::make($request->user()->client),
+            'latest_client' => Client::latest()->first(),
         ]);
     }
 }

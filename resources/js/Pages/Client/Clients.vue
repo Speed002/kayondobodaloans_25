@@ -4,6 +4,7 @@ import Default from '@/Layouts/Default.vue'
 import ClientCard from './ClientCard.vue';
 import _debounce from 'lodash.debounce';
 import { ref, watch } from 'vue';
+import Pagination from '../../Components/Pagination.vue';
 defineOptions({ layout: Default })
 const props = defineProps({
     clients:Object,
@@ -23,15 +24,15 @@ watch(searchQuery, (query) => {
 })
 </script>
 <template>
-    <!-- {{ clients.length }} -->
     <div class="p-8 font-mono space-y-6">
         <div class="max-w-5xl mx-auto">
             <input type="search" id="search" class="w-full rounded-md text-sm" v-model="searchQuery" placeholder="Search clients...">
         </div>
         <div v-if="clients" class="max-w-5xl mx-auto space-y-5">
             <div class="md:flex md:justify-start sm:justify-start rounded-md flex-wrap sm:gap-3 md:gap-3 gap-2 flex items-center justify-between gap-2 md:p-0 sm:p-2">
-                <ClientCard v-for="client in clients" v-bind:key="client.id" :client="client" />
+                <ClientCard v-for="client in clients.data" v-bind:key="client.id" :client="client" />
             </div>
+            <Pagination :pagination="clients.meta"/>
         </div>
         <div v-else>No clients yet, please create!</div>
     </div>

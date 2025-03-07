@@ -32,7 +32,7 @@ defineProps({
             </div>
             <div v-if="latest_client" class="flex-grow portal-mini rounded-md space-y-1">
                 <div class="flex flex-col space-y-2">
-                    <span class="text-sm">Recently added client: <span class="bg-cyan-950 p-1 rounded-md">{{latest_client.datetime.human}}</span> at <span class="bg-cyan-950 p-1 rounded-md">{{latest_client.datetime.time}}</span>, added by <span class="bg-cyan-950 p-1 rounded-md">{{ latest_client.whoCreated.name }}</span></span>
+                    <span class="text-sm">Recently added client:</span>
                     <Link :href="route('client.show', latest_client.id)" class="text-sm text-sky-500">
                         <span class="text-gray-400">></span> {{latest_client.name}}, {{latest_client.nin}}
                     </Link>

@@ -3,8 +3,8 @@
         <Link v-for="link in pagination.links"
         :key="link.label"
         :href="link.url ?? ''"
-        class="flex items-center justify-center px-3 py-2 text-sm rounded-lg text-gray-600"
-        :class="{ 'bg-gray-200' :link.active, 'opacity-50' : !link.url }"
+        class="flex items-center justify-center px-3 py-2 text-sm rounded-lg text-gray-400"
+        :class="{ 'bg-gray-200' :link.active, 'opacity-70' : !link.url }"
         >
             {{ link.label }}
         </Link>

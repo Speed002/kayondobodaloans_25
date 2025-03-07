@@ -12,16 +12,24 @@ class ClientIndexController extends Controller
     {
         $this->middleware(['auth']);
     }
-    public function __invoke(Request $request){
-        if($request->query()){
-            // dd($request->search);
-            $clients = ClientResource::collection(Client::with(['motor', 'referee', 'loan'])->where('name', 'like', '%' . $request->search . '%')->get());
-        }else{
-            $clients = ClientResource::collection(Client::with(['motor', 'referee', 'loan'])->get());
+    public function __invoke(Request $request)
+    {
+        $query = Client::with(['motor', 'referee', 'loan']);
+
+        if ($request->has('search')) {
+            $query->where('name', 'like', '%' . $request->search . '%');
         }
+
+        // Reset to page 1 if searching
+        $page = $request->has('search') ? 1 : $request->input('page', 1);
+
+        $clients = $query->paginate(12, ['*'], 'page', $page); // Force page reset if searching
+
         return inertia()->render('Client/Clients', [
             'query' => (object) $request->query(),
-            'clients' => $clients
+            'clients' => ClientResource::collection($clients)->response()->getData(true)
         ]);
     }
+
+
 }
